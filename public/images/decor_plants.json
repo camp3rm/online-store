@@ -17,7 +17,8 @@
 				"water_requirement": "Помірна",
 				"light_requirement": "Півтінь",
 				"extra_description": "Азалія китайська ціниться за яскраві квіти та аромат, потребує регулярного поливу і захисту від прямих сонячних променів.",
-				"price": 250
+				"price": 250,
+				"image": "/images/azalia_chinese.jpg"
 			},
 			{
 				"id": 2,
@@ -34,7 +35,8 @@
 				"water_requirement": "Помірна",
 				"light_requirement": "Півтінь",
 				"extra_description": "Камелія олійна декоративна і олійна рослина, любить вологий ґрунт та притінення, часто використовується в парках і садах Китаю.",
-				"price": 350
+				"price": 350,
+				"image": "/camellia_oil_chinese.jpg"
 			},
 			{
 				"id": 3,
@@ -51,7 +53,8 @@
 				"water_requirement": "Низька",
 				"light_requirement": "Сонце",
 				"extra_description": "Гінкго вважається живим викопним, має стійкість до забруднень і часто використовується в міських ландшафтах по всьому світу.",
-				"price": 1200
+				"price": 1200,
+				"image": "/ginkgo_tree.jpg"
 			},
 			{
 				"id": 4,
@@ -68,7 +71,8 @@
 				"water_requirement": "Помірна",
 				"light_requirement": "Сонце",
 				"extra_description": "Метасеквоя — реліктова хвойна рослина, швидкоростуча і декоративна, підходить для великих садів і парків, потребує регулярного поливу.",
-				"price": 1800
+				"price": 1800,
+				"image": "/metasequoia_chinese.jpg"
 			},
 			{
 				"id": 5,
@@ -80,12 +84,13 @@
 				"origin": "Північний та Центральний Китай",
 				"height": 1.2,
 				"color_foliage": "Зелений",
-				"color_flower": "Рожевий, білий, червоний",
+				"color_flower": "Рожевий",
 				"fruiting": "Ні",
 				"water_requirement": "Помірна",
 				"light_requirement": "Сонце-півтінь",
 				"extra_description": "Півонія ціниться за великі і яскраві квіти, розвивається на сонячних або напівзатінених ділянках, зимостійка та невибаглива в догляді.",
-				"price": 150
+				"price": 150,
+				"image": "/paeonia_chinese.jpg"
 			},
 			{
 				"id": 6,
@@ -102,7 +107,8 @@
 				"water_requirement": "Висока",
 				"light_requirement": "Півтінь",
 				"extra_description": "Цибмідум гейринга — тендітна орхідея, потребує помірної вологості і розсіяного світла, часто вирощується в декоративних композиціях і зимових садах.",
-				"price": 600
+				"price": 600,
+				"image": "/cymbidium_goeringii.jpg"
 			},
 			{
 				"id": 7,
@@ -119,7 +125,8 @@
 				"water_requirement": "Помірна",
 				"light_requirement": "Півтінь",
 				"extra_description": "Хоста китайська декоративна багаторічна трав’яниста рослина, ідеальна для тіньових ділянок, має ароматні квіти і потребує регулярного поливу.",
-				"price": 180
+				"price": 180,
+				"image": "/hosta_chinese.jpg"
 			},
 			{
 				"id": 8,
@@ -136,7 +143,8 @@
 				"water_requirement": "Помірна",
 				"light_requirement": "Сонце-півтінь",
 				"extra_description": "Лілія Брауні — декоративна рослина з ароматними білими квітами, любить сонячні ділянки або легкий тінь, потребує регулярного помірного поливу.",
-				"price": 220
+				"price": 220,
+				"image": "/lilium_brownii.jpg"
 			},
 			{
 				"id": 9,
@@ -153,7 +161,8 @@
 				"water_requirement": "Низька",
 				"light_requirement": "Сонце",
 				"extra_description": "Кізія американська — витривалий кущ із привабливими синіми квітками, що росте на сухих та сонячних ділянках.",
-				"price": 280
+				"price": 280,
+				"image": "/ceanothus_americanus.jpg"
 			},
 			{
 				"id": 10,
@@ -170,7 +179,8 @@
 				"water_requirement": "Помірна",
 				"light_requirement": "Півтінь",
 				"extra_description": "Азалія атлантична — декоративний кущ із ніжними рожевими квітками, пристосований до помірного клімату східного узбережжя.",
-				"price": 300
+				"price": 300,
+				"image": "/rhododendron_atlanticum.jpg"
 			},
 
 			{

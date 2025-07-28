@@ -1,38 +1,45 @@
 import React from 'react';
 import InputField from '@ui/Input';
-import PasswordInput from '@ui/PasswordInput';
+import ShowPasswordButton from '@ui/ShowPassword';
 import { z, ZodType } from 'zod';
-import { useForm } from 'react-hook-form';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 type RegistrationFormProps = {
 	showPassword: boolean;
-	showConfirmPassword: boolean;
 	showPasswordToggle: () => void;
-	showConfirmPasswordToggle: () => void;
+	error?: string;
 };
 
-export default function RegistrationForm() {
+export default function RegistrationForm({
+	showPassword,
+	showPasswordToggle,
+}: RegistrationFormProps) {
 	const schema = z
 		.object({
 			firstName: z
 				.string()
-				.min(1, { message: 'Невірний формат імени' })
-				.max(15, { message: 'Ім`я повинно містити від 2 до 15 символів' }),
+				.min(2, { message: "Ім'я має містити щонайменше 2 символи" }),
 			telephoneNumber: z
 				.string()
 				.min(7, { message: 'Номер телефону має містити щонайменше 7 символів' })
 				.regex(/^\d+$/, { message: 'Телефон має містити лише цифри' }),
-			email: z.email().min(1, { message: 'Невірний формат email' }),
+			emailAddress: z.email({ message: 'Невірний формат email' }),
 			password: z
 				.string()
-				.min(6, { message: 'Пароль має містити мінімум 6 символів' })
-				.regex(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^A-Za-z0-9]).+$/, {
-					message:
-						'Пароль має містити одну велику, малу літеру, цифру та спецсимвол',
-				}),
-			confirmPassword: z.string().min(6),
-			agreement: z.literal(true),
+				.refine(
+					(val) =>
+						val.length >= 6 &&
+						/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^A-Za-z0-9]).+$/.test(val),
+					{
+						message:
+							'Пароль має містити мінімум 6 символів, одну велику, малу літеру, цифру та спецсимвол',
+					}
+				),
+			confirmPassword: z.string(),
+			agreement: z.boolean().refine((val) => val === true, {
+				message: 'Ви повинні підтвердити, що ви не робот',
+			}),
 		})
 		.refine((data) => data.password === data.confirmPassword, {
 			message: 'Паролі не співпадають',
@@ -48,98 +55,114 @@ export default function RegistrationForm() {
 	} = useForm<FormData>({
 		resolver: zodResolver(schema),
 		criteriaMode: 'all',
+		mode: 'onChange',
 		defaultValues: {
 			firstName: '',
 			telephoneNumber: '',
-			email: '',
+			emailAddress: '',
 			password: '',
 			confirmPassword: '',
 			agreement: false,
 		},
 	});
-	const submitData = (data: FormData) => {
-		console.log('Submitted Data:', data);
-	};
 
+	const submitData: SubmitHandler<FormData> = (data) => {
+		console.log('Submitted Data:', data);
+		console.log('Form Errors:', errors);
+	};
 	return (
 		<form
 			onSubmit={handleSubmit(submitData)}
-			className="register_form">
+			className="register_form"
+			noValidate>
 			<div className="input_box">
 				<InputField
-					placeholder="Ім`я"
 					type="text"
+					placeholder="Ім'я"
 					className="input_field"
 					{...register('firstName')}
 					required
-					error={errors.firstName?.message}
 				/>
-
+				{errors.firstName && (
+					<span className="error_message">{errors.firstName?.message}</span>
+				)}
 				<InputField
+					type="tel"
 					placeholder="Номер телефону"
-					type="text"
 					className="input_field"
 					{...register('telephoneNumber')}
 					required
-					error={errors.telephoneNumber?.message}
 				/>
-
+				{errors.telephoneNumber && (
+					<span className="error_message">
+						{errors.telephoneNumber?.message}
+					</span>
+				)}
 				<InputField
-					placeholder="Email"
-					type="text"
+					type="email"
+					placeholder="Електронна пошта"
 					className="input_field"
-					{...register('email')}
+					{...register('emailAddress')}
 					required
-					error={errors.email?.message}
 				/>
-
-				<div className="password_fields">
-					<PasswordInput
+				{errors.emailAddress && (
+					<span className="error_message">{errors.emailAddress?.message}</span>
+				)}
+				<div className="password_box">
+					<InputField
+						type={showPassword ? 'text' : 'password'}
 						placeholder="Пароль"
-						type="password"
 						className="input_field"
 						{...register('password')}
 						required
-						error={errors.password?.message}
-						showPasswordToggle={showPasswordToggle}
+					/>
+					<ShowPasswordButton
+						name="showPassword"
+						type="button"
+						onClick={showPasswordToggle}
+						className="show_password_button"
 					/>
 				</div>
-
-				<div className="password_fields">
-					<PasswordInput
-						placeholder="Підтвердження пароля"
-						type="password"
+				{errors.password && (
+					<span className="error_message">{errors.password?.message}</span>
+				)}
+				<div className="password_box">
+					<InputField
+						type={showPassword ? 'text' : 'password'}
+						placeholder="Підтвердіть пароль"
 						className="input_field"
 						{...register('confirmPassword')}
 						required
-						error={errors.confirmPassword?.message}
-						showPasswordToggle={showConfirmPasswordToggle}
+					/>
+					<ShowPasswordButton
+						name="showPassword"
+						type="button"
+						onClick={showPasswordToggle}
+						className="show_password_button"
 					/>
 				</div>
+				{errors.confirmPassword && (
+					<span className="error_message">
+						{errors.confirmPassword?.message}
+					</span>
+				)}
 			</div>
-
 			<div className="checkbox_box">
-				<label className="checkbox_label">
-					<InputField
+				<div className="checkbox_container">
+					<input
 						type="checkbox"
 						className="checkbox_field"
 						{...register('agreement')}
 						required
 					/>
-					Я не робот
-				</label>
+					<span>Я не робот</span>
+				</div>
 				{errors.agreement && (
-					<span className="error_message">
-						Потрібно підтвердити, що ви не робот
-					</span>
+					<span className="error_message">{errors.agreement?.message}</span>
 				)}
 			</div>
 
-			<button
-				type="submit"
-				className="submit_button">
-				Зареєструватися
-			</button>
+			<button className="submit_button">Зареєструватися</button>
 		</form>
 	);
 }

@@ -3,18 +3,13 @@ import React from 'react';
 import { useState } from 'react';
 import './register.scss';
 import Image from 'next/image';
-import RegistrationFrom from '@/app/frontend/features/auth/FormHelper';
+import Form from '@features/auth/FormHelper';
 
 export default function RegisterForm() {
 	const [showPassword, setShowPassword] = useState<boolean>(false);
-	const [showConfirmPassword, setShowConfirmPassword] =
-		useState<boolean>(false);
 
 	const showPasswordToggle: () => void = () => {
 		setShowPassword((prev) => !prev);
-	};
-	const showConfirmPasswordToggle: () => void = () => {
-		setShowConfirmPassword((prev) => !prev);
 	};
 
 	return (
@@ -30,14 +25,12 @@ export default function RegisterForm() {
 					/>
 					<h1 className="register_title">Реєстрація</h1>
 				</div>
-				<RegistrationFrom
+				<Form
 					showPassword={showPassword}
-					showConfirmPassword={showConfirmPassword}
 					showPasswordToggle={showPasswordToggle}
-					showConfirmPasswordToggle={showConfirmPasswordToggle}
 				/>
 				<div className="login_redirect">
-					Вже маєте акаунт?{' '}
+					Вже маєте акаунт?
 					<a
 						className="login_redirect-link"
 						href="/login">

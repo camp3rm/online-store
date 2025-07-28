@@ -11,13 +11,11 @@
 	margin: 0 auto;
 
 	& .register_form-container {
-		padding-top: 30px;
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: auto 1fr auto;
 		gap: 0px;
-		margin-bottom: 50px;
-		overflow: hidden;
+		
 		& .register_form-head {
 			display: flex;
 			flex-direction: column;
@@ -68,7 +66,7 @@
 						font-weight: regular;
 					}
 				}
-				& .password_fields {
+				& .password_box {
 					position: relative;
 
 					& .show_password_button {
@@ -88,17 +86,15 @@
 
 			& .checkbox_box {
 				display: flex;
+				flex-direction: column;
 				margin-top: 20px;
 				margin-inline: 25px;
 				display: flex;
-				flex-direction: column;
 
-				& .checkbox_label {
+				& .checkbox_container {
 					display: flex;
-					align-items: center;
-					font-size: 14px;
-
-					font-size: 14px;
+					flex-direction: row;
+					
 					& .checkbox_field {
 						cursor: pointer;
 						margin-right: 10px;
@@ -107,8 +103,9 @@
 						outline: none;
 						border-color: #ffffff;
 						background-color: transparent;
-					}
+					
 				}
+			}
 			}
 			& .submit_button {
 				display: inline-flex;
@@ -145,7 +142,7 @@
 			}
 		}
 		& .error_message {
-					display: inline-block;
+					display: block;
 					color: #ff0000;
 					font-size: 14px;
 					line-height: 1;

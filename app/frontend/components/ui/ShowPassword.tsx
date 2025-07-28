@@ -7,14 +7,17 @@ type ButtonFieldProps = {
 	onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
-export default function ShowAPasswordButton({ className, type, onClick, name}: ButtonFieldProps) {
-		return (
+export default function ShowPasswordButton({
+	className,
+	type,
+	onClick,
+	name,
+}: ButtonFieldProps) {
+	return (
 		<button
 			name={name}
 			type={type}
 			onClick={onClick}
-			className={className}
-		>
-		</button>
+			className={className}></button>
 	);
 }

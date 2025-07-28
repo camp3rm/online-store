@@ -1,26 +1,29 @@
-.register_form-wrapper {
+.wrapper_register-form {
 	width: 100%;
-	max-width: 33.125rem;
-	// max-height: 45.25rem;
+	max-width: 320px;
+	height: 100dvh;
 	background: linear-gradient(180deg, #627254, #050403);
 	border-radius: 50px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
 
 	& .register_form-container {
 		padding-top: 30px;
 		display: grid;
 		grid-template-columns: 1fr;
-		grid-template-rows: 100px 1fr 1fr;
+		grid-template-rows: auto 1fr auto;
 		gap: 0px;
-
+		margin-bottom: 50px;
+		overflow: hidden;
 		& .register_form-head {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			margin-bottom: 20px;
+			margin-bottom: 26px;
 
 			& .signin_icon {
 				width: 32.5px;
@@ -28,7 +31,7 @@
 				margin-bottom: 20px;
 			}
 			& .register_title {
-				font-size: 36px;
+				font-size: 24px;
 				font-weight: 700;
 				line-height: 1;
 				letter-spacing: 0;
@@ -38,20 +41,20 @@
 
 		& .register_form {
 			display: grid;
-			grid-template-columns: repeat(1, 1fr);
-			grid-template-rows: 1fr 25px 40px;
+			grid-template-columns: 1fr;
+			margin-bottom: 26px;
 
 			& .input_box {
 				display: grid;
-				grid-template-columns: repeat(1, 1fr);
-				grid-template-rows: repeat(5, 1fr);
+				grid-template-columns: 1fr;
 				gap: 10px;
 				margin-bottom: 13px;
+				margin-inline: 25px;
 
 				& .input_field {
-					width: 100%;
-					min-width: 380px;
-					min-height: 60px;
+					min-width: 264px;
+					height: 45px;
+					padding-left: 17px;
 					border-radius: 15px;
 					border: 1px solid #ffffff;
 					outline: none;
@@ -59,34 +62,94 @@
 
 					&::placeholder {
 						color: #ffffff;
-						font-size: 16px;
+						font-size: 14px;
 						line-height: 1;
 						letter-spacing: 0;
-						font-weight: 400;
-						padding-left: 18px;
+						font-weight: regular;
 					}
+				}
+				& .password_fields {
+					position: relative;
+
+					& .show_password_button {
+						width: 16px;
+						height: 18px;
+						position: absolute;
+						top: 50%;
+						right: 16px;
+						transform: translateY(-50%);
+						cursor: pointer;
+						background: url('/images/show-eye.svg') no-repeat center;
+						border: none;
+						outline: none;
+					}
+				}
+			}
+
+			& .checkbox_box {
+				display: flex;
+				margin-top: 20px;
+				margin-inline: 25px;
+				display: flex;
+				flex-direction: column;
+
+				& .checkbox_label {
+					display: flex;
+					align-items: center;
+					font-size: 14px;
+
+					font-size: 14px;
+					& .checkbox_field {
+						cursor: pointer;
+						margin-right: 10px;
+						width: 15px;
+						height: 15px;
+						outline: none;
+						border-color: #ffffff;
+						background-color: transparent;
+					}
+				}
+			}
+			& .submit_button {
+				display: inline-flex;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				height: 26px;
+				margin-top: 32px;
+				margin-inline: 25px;
+				background-color: #ffffff;
+				border-radius: 10px;
+				color: #000000;
+				font-size: 15px;
+				font-weight: 600;
+				cursor: pointer;
+
+				&:hover {
+					background-color: #8bc34a;
+					color: #ffffff;
+					border: none;
+					outline: none;
 				}
 			}
 		}
 
-		& .checkbox_box {
-			display: flex;
-			padding: 2px;
-
-			& .checkbox_label {
-				display: flex;
-				align-items: center;
-
-					font-size: 14px;
-				& .checkbox_field {
-					margin-right: 10px;
-					width: 15px;
-					height: 15px;
-					outline: none;
-					border-color: #ffffff;
-					background-color: transparent;
-				}
+		& .login_redirect {
+			text-align: center;
+			font-size: 10px;
+			line-height: 1;
+			font-weight: 500;
+			& .login_redirect-link {
+				cursor: pointer;
+				color: #00ff66;
+			}
 		}
-	}
+		& .error_message {
+					display: inline-block;
+					color: #ff0000;
+					font-size: 14px;
+					line-height: 1;
+					margin-block: 7px;
+				}
 	}
 }

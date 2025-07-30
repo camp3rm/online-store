@@ -16,6 +16,7 @@ exports.UserController = void 0;
 const common_1 = require("@nestjs/common");
 const user_service_1 = require("./user.service");
 const create_user_dto_1 = require("./create-user.dto");
+const login_user_dto_1 = require("./login-user.dto");
 let UserController = class UserController {
     userService;
     constructor(userService) {
@@ -24,17 +25,27 @@ let UserController = class UserController {
     async create(user) {
         return this.userService.create(user);
     }
+    async login(user) {
+        return this.userService.login(user);
+    }
 };
 exports.UserController = UserController;
 __decorate([
-    (0, common_1.Post)('/create'),
+    (0, common_1.Post)('/register'),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_user_dto_1.CreateUserDto]),
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "create", null);
+__decorate([
+    (0, common_1.Get)('/login'),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [login_user_dto_1.LoginUserDto]),
+    __metadata("design:returntype", Promise)
+], UserController.prototype, "login", null);
 exports.UserController = UserController = __decorate([
-    (0, common_1.Controller)('user'),
+    (0, common_1.Controller)('auth'),
     __metadata("design:paramtypes", [user_service_1.UserService])
 ], UserController);
 //# sourceMappingURL=user.controller.js.map

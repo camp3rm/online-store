@@ -9,6 +9,10 @@ export class User {
 
   @prop({ required: true })
   password: string;
+
+  @prop({ required: true })
+  number: string;
+
 }
 
 export const UserModel = getModelForClass(User);

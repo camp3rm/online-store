@@ -17,6 +17,7 @@ const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
 const user_model_1 = require("./user.model");
+const bcrypt = require("bcrypt");
 let UserService = class UserService {
     userModel;
     constructor(userModel) {
@@ -28,6 +29,13 @@ let UserService = class UserService {
     }
     async findAll() {
         return this.userModel.find().exec();
+    }
+    async login(data) {
+        const user = await this.userModel.findOne({ email: data.email }).exec();
+        if (user && await bcrypt.compare(data.password, user.password)) {
+            return user;
+        }
+        return null;
     }
 };
 exports.UserService = UserService;

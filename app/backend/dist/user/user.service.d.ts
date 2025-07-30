@@ -14,4 +14,12 @@ export declare class UserService {
     } & {
         __v: number;
     })[]>;
+    login(data: {
+        email: string;
+        password: string;
+    }): Promise<(import("mongoose").Document<unknown, {}, User, {}> & User & {
+        _id: import("mongoose").Types.ObjectId;
+    } & {
+        __v: number;
+    }) | null>;
 }

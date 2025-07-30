@@ -27,7 +27,8 @@
 			"@ui/*": ["app/frontend/components/ui/*"],
 			"@hooks/*": ["app/frontend/hooks/*"],
 			"@utils/*": ["app/frontend/utils/*"],
-			"@styles/*": ["app/frontend/styles/*"]
+			"@styles/*": ["app/frontend/styles/*"],
+			"@api/*": ["app/frontend/api/*"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

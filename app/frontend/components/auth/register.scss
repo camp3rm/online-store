@@ -1,6 +1,5 @@
 .wrapper_register-form {
 	width: 100%;
-	max-width: 320px;
 	height: 100dvh;
 	background: linear-gradient(180deg, #627254, #050403);
 	border-radius: 50px;
@@ -15,7 +14,7 @@
 		grid-template-columns: 1fr;
 		grid-template-rows: auto 1fr auto;
 		gap: 0px;
-		
+
 		& .register_form-head {
 			display: flex;
 			flex-direction: column;
@@ -94,7 +93,7 @@
 				& .checkbox_container {
 					display: flex;
 					flex-direction: row;
-					
+
 					& .checkbox_field {
 						cursor: pointer;
 						margin-right: 10px;
@@ -103,9 +102,8 @@
 						outline: none;
 						border-color: #ffffff;
 						background-color: transparent;
-					
+					}
 				}
-			}
 			}
 			& .submit_button {
 				display: inline-flex;
@@ -142,11 +140,52 @@
 			}
 		}
 		& .error_message {
-					display: block;
-					color: #ff0000;
-					font-size: 14px;
-					line-height: 1;
-					margin-block: 7px;
+			display: block;
+			color: #db4848;
+			font-size: 14px;
+			line-height: 1;
+			margin-block: 7px;
+		}
+	}
+}
+
+@media screen and (max-width: 575px) {
+	.wrapper_register-form {
+		max-width: 320px;
+	}
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+	.wrapper_register-form {
+		max-width: 430px;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	.wrapper_register-form {
+		max-width: 430px;
+	}
+}
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+	.wrapper_register-form {
+		max-width: 430px;
+		& .register_form-container {
+			& .register_form-head {
+				& .register_title {
+					font-size: 36px;
 				}
+			}
+		}
+	}
+}
+@media screen and (min-width: 1201px) and (max-width: 1440px) {
+	.wrapper_register-form {
+		max-width: 430px;
+	}
+}
+
+@media screen and (min-width: 1441px) {
+	.wrapper_register-form {
+		max-width: 430px;
 	}
 }

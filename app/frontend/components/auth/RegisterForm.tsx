@@ -8,7 +8,7 @@ import Form from '@features/auth/FormHelper';
 export default function RegisterForm() {
 	const [showPassword, setShowPassword] = useState<boolean>(false);
 
-	const showPasswordToggle: () => void = () => {
+	const showPasswordToggle = () => {
 		setShowPassword((prev) => !prev);
 	};
 

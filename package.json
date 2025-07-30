@@ -1,35 +1,32 @@
 {
-  "name": "Practice",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev:backend": "cd app/backend && npm run start:dev",
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "bcrypt": "^6.0.0",
-    "next": "15.4.1",
-    "react": "19.1.0",
-    "react-dom": "19.1.0"
-  },
-  "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@types/mongoose": "^5.11.96",
-    "@hookform/resolvers": "^5.2.0",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.4.1",
-    "react-hook-form": "^7.61.1",
-    "sass": "^1.89.2",
-    "typescript": "^5",
-    "zod": "^4.0.10"
-  },
-  "workspaces": [
-    "practice/React/eCommerceapp"
-  ]
+  	"name": "Practice",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@hookform/resolvers": "^5.2.0",
+		"next": "15.4.1",
+		"react": "19.1.0",
+		"react-dom": "19.1.0",
+		"react-hook-form": "^7.61.1",
+		"sass": "^1.89.2",
+		"zod": "^4.0.10"
+	},
+	"devDependencies": {
+		"@eslint/eslintrc": "^3",
+		"@types/node": "^20",
+		"@types/react": "^19",
+		"@types/react-dom": "^19",
+		"eslint": "^9",
+		"eslint-config-next": "15.4.1",
+		"typescript": "^5"
+	},
+	"workspaces": [
+		"Practice/React/ecommerceapp"
+	]
 }

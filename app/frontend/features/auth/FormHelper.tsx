@@ -1,9 +1,11 @@
 import React from 'react';
 import InputField from '@ui/Input';
 import ShowPasswordButton from '@ui/ShowPassword';
-import { z, ZodType } from 'zod';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { registrationSchema, RegistrationFormData } from './auth.schema';
+import { registerUser } from '@api/registerUser';
+import { AxiosError } from 'axios';
 
 type RegistrationFormProps = {
 	showPassword: boolean;
@@ -15,45 +17,13 @@ export default function RegistrationForm({
 	showPassword,
 	showPasswordToggle,
 }: RegistrationFormProps) {
-	const schema = z
-		.object({
-			firstName: z
-				.string()
-				.min(2, { message: "Ім'я має містити щонайменше 2 символи" }),
-			telephoneNumber: z
-				.string()
-				.min(7, { message: 'Номер телефону має містити щонайменше 7 символів' })
-				.regex(/^\d+$/, { message: 'Телефон має містити лише цифри' }),
-			emailAddress: z.email({ message: 'Невірний формат email' }),
-			password: z
-				.string()
-				.refine(
-					(val) =>
-						val.length >= 6 &&
-						/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^A-Za-z0-9]).+$/.test(val),
-					{
-						message:
-							'Пароль має містити мінімум 6 символів, одну велику, малу літеру, цифру та спецсимвол',
-					}
-				),
-			confirmPassword: z.string(),
-			agreement: z.boolean().refine((val) => val === true, {
-				message: 'Ви повинні підтвердити, що ви не робот',
-			}),
-		})
-		.refine((data) => data.password === data.confirmPassword, {
-			message: 'Паролі не співпадають',
-			path: ['confirmPassword'],
-		});
-
-	type FormData = z.infer<typeof schema>;
-
 	const {
 		register,
 		handleSubmit,
+		reset,
 		formState: { errors },
-	} = useForm<FormData>({
-		resolver: zodResolver(schema),
+	} = useForm<RegistrationFormData>({
+		resolver: zodResolver(registrationSchema),
 		criteriaMode: 'all',
 		mode: 'onChange',
 		defaultValues: {
@@ -66,10 +36,17 @@ export default function RegistrationForm({
 		},
 	});
 
-	const submitData: SubmitHandler<FormData> = (data) => {
-		console.log('Submitted Data:', data);
-		console.log('Form Errors:', errors);
+	const submitData: SubmitHandler<RegistrationFormData> = async (data) => {
+		try {
+			const result = await registerUser(data);
+			alert('Реєстрація пройшла успішно!');
+			reset();
+		} catch (error) {
+			const axiosError = error as AxiosError<{ message: string }>;
+			alert(axiosError.response?.data?.message ?? 'Сервіс недоступний');
+		}
 	};
+
 	return (
 		<form
 			onSubmit={handleSubmit(submitData)}

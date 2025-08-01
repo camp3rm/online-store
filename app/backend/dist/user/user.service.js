@@ -30,12 +30,21 @@ let UserService = class UserService {
     async findAll() {
         return this.userModel.find().exec();
     }
-    async login(data) {
-        const user = await this.userModel.findOne({ email: data.email }).exec();
-        if (user && await bcrypt.compare(data.password, user.password)) {
+    async findById(id) {
+        return this.userModel.findById(id).exec();
+    }
+    async findByEmail(email) {
+        return this.userModel.findOne({ email }).exec();
+    }
+    async validateUser(email, password) {
+        const user = await this.findByEmail(email);
+        if (user && await bcrypt.compare(password, user.password)) {
             return user;
         }
         return null;
+    }
+    async login(data) {
+        return this.validateUser(data.email, data.password);
     }
 };
 exports.UserService = UserService;

@@ -8,12 +8,12 @@ import { LoginUserDto } from './login-user.dto';
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  @Post('/register')
-  async create(@Body() user:CreateUserDto) {
+ /* @Post('/register')
+  async create(@Body() user: CreateUserDto) {
     return this.userService.create(user);
   }
-  @Get('/login')
+  @Post('/login')
   async login(@Body() user: LoginUserDto) {
     return this.userService.login(user);
-  } 
+  } */
 }

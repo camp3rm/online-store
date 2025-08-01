@@ -18,11 +18,24 @@ export class UserService {
     return this.userModel.find().exec();
   }
 
-  async login(data: { email: string; password: string }) {
-    const user = await this.userModel.findOne({ email: data.email }).exec();
-    if (user && await bcrypt.compare(data.password, user.password)) {
+  async findById(id: string) {
+    return this.userModel.findById(id).exec();
+  }
+
+  async findByEmail(email: string) {
+    return this.userModel.findOne({ email }).exec();
+  }
+
+  async validateUser(email: string, password: string) {
+    const user = await this.findByEmail(email);
+    if (user && await bcrypt.compare(password, user.password)) {
       return user;
     }
     return null;
-}
+  }
+
+  // Виніс валідацію у validateUser
+  async login(data: { email: string; password: string }) {
+    return this.validateUser(data.email, data.password);
+  }
 }

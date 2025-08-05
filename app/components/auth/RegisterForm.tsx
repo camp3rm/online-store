@@ -3,7 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import './register.scss';
 import Image from 'next/image';
-import Form from '@features/auth/FormHelper';
+import Form from '@features/auth/RegistrationForm';
 
 export default function RegisterForm() {
 	const [showPassword, setShowPassword] = useState<boolean>(false);

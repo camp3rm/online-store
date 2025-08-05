@@ -76,19 +76,31 @@
 						right: 16px;
 						transform: translateY(-50%);
 						cursor: pointer;
-						background: url('/images/show-eye.svg') no-repeat center;
+						background: url('/images/closeEye.svg') no-repeat center;
+						border: none;
+						outline: none;
+					}
+					& .close_password_button {
+						width: 16px;
+						height: 18px;
+						position: absolute;
+						top: 50%;
+						right: 16px;
+						transform: translateY(-50%);
+						cursor: pointer;
+						background: url('/images/openEye.svg') no-repeat center;
 						border: none;
 						outline: none;
 					}
 				}
 			}
 
-			& .checkbox_box {
-				display: flex;
-				flex-direction: column;
-				margin-top: 20px;
-				margin-inline: 25px;
-				display: flex;
+			// & .checkbox_box {
+			// 	display: flex;
+			// 	flex-direction: column;
+			// 	margin-top: 20px;
+			// 	margin-inline: 25px;
+			// 	display: flex;
 
 				& .checkbox_container {
 					display: flex;
@@ -104,7 +116,7 @@
 						background-color: transparent;
 					}
 				}
-			}
+			// }
 			& .submit_button {
 				display: inline-flex;
 				justify-content: center;

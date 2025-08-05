@@ -21,14 +21,15 @@
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["*"],
-			"@components/*": ["app/frontend/components/*"],
-			"@auth/*": ["app/frontend/components/auth/*"],
-			"@features/*": ["app/frontend/features/*"],
-			"@ui/*": ["app/frontend/components/ui/*"],
-			"@hooks/*": ["app/frontend/hooks/*"],
-			"@utils/*": ["app/frontend/utils/*"],
-			"@styles/*": ["app/frontend/styles/*"],
-			"@api/*": ["app/frontend/api/*"]
+			"@components/*": ["app/components/*"],
+			"@auth/*": ["app/components/auth/*"],
+			"@features/*": ["app/features/*"],
+			"@ui/*": ["app/components/ui/*"],
+			"@hooks/*": ["app/hooks/*"],
+			"@utils/*": ["app/utils/*"],
+			"@styles/*": ["app/styles/*"],
+			"@api/*": ["app/api/*"],
+			"@assets/*": ["app/assets/*"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

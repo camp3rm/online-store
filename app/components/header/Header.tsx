@@ -1,5 +1,5 @@
 'use client';
-import React, { use, useState } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import './header.scss';
 import logo from '@assets/Logo.svg';

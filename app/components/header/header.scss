@@ -3,13 +3,25 @@
 	max-width: 1440px;
 	min-width: 320px;
 	width: 100%;
+	height: 80px;
 	margin: 20px auto;
 	padding: 0;
 	display: grid;
 	place-items: space-between;
 	grid-template-columns: auto 1fr auto;
 	position: relative;
-	background-color: brown;
+	background-color: #fdfdfd;
+
+	& .logo {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		& .logo_icon {
+			height: 59px;
+			width: 66px;
+		}
+	}
 
 	& .toggle_menu {
 		margin-right: 18px;
@@ -22,9 +34,9 @@
 
 		& .toggle_menu-line {
 			display: block;
-			width: 50px;
+			width: 35px;
 			height: 6px;
-			margin: 7.5px 0px;
+			margin: 3.5px 0px;
 			border-radius: 25px;
 
 			&:first-child {
@@ -69,6 +81,10 @@
 				list-style: none;
 				display: flex;
 				justify-content: space-evenly;
+
+				& .nav_list-item {
+					color: #000000;
+				}
 			}
 		}
 	}
@@ -83,15 +99,29 @@
 				margin-right: 20px;
 			}
 		}
-		& .login_link {
+		& .user_panel-login {
 			width: 100px;
 			height: 40px;
-			background-color: #627254;
-			color: #ffffff;
-			text-align: center;
-			border-radius: 10px;
+			background-color: #1D6517;
+			border-radius: 15px;
 			border: none;
 			outline: none;
+			& .login_link {
+				color: #ffffff;
+				text-align: center;
+				border: none;
+				outline: none;
+				font-weight: 400;
+				text-decoration: none;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				height: 100%;
+			}
+		&:hover {
+			background-color: #1a5b15;
+		}
 		}
 	}
 
@@ -104,6 +134,17 @@
 @media screen and (max-width: 575px) {
 	.header {
 		grid-template-columns: repeat(2, 1fr);
+
+		& .logo {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			& .logo_icon {
+				height: 49px;
+				width: 50px;
+			}
+		}
 		& .navigation {
 			display: none;
 		}
@@ -157,18 +198,8 @@
 					}
 				}
 				& .user_panel-login {
-					display: flex;
-					flex-direction: column;
-					justify-content: center;
-					align-items: center;
-					width: 100px;
-					height: 40px;
-					background-color: #627254;
-					border-radius: 10px;
-
-					& a {
+					& .login_link {
 						font-size: 16px;
-						font-weight: 400;
 					}
 				}
 			}
@@ -179,6 +210,7 @@
 @media screen and (min-width: 576px) and (max-width: 767px) {
 	.header {
 		grid-template-columns: repeat(2, 1fr);
+
 		& .navigation {
 			display: none;
 		}
@@ -232,18 +264,8 @@
 					}
 				}
 				& .user_panel-login {
-					display: flex;
-					flex-direction: column;
-					justify-content: center;
-					align-items: center;
-					width: 100px;
-					height: 40px;
-					background-color: #627254;
-					border-radius: 10px;
-
-					& a {
+					& .login_link {
 						font-size: 18px;
-						font-weight: 400;
 					}
 				}
 			}
@@ -267,23 +289,8 @@
 		}
 		& .user_panel {
 			& .user_panel-login {
-				width: 100px;
-				height: 40px;
-				background-color: #627254;
-				border-radius: 10px;
-				border: none;
-				outline: none;
-
 				& .login_link {
-					color: #ffffff;
 					font-size: 18px;
-					font-weight: 400;
-					text-decoration: none;
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					width: 100%;
-					height: 100%;
 				}
 			}
 		}
@@ -307,23 +314,8 @@
 		}
 		& .user_panel {
 			& .user_panel-login {
-				width: 100px;
-				height: 40px;
-				background-color: #627254;
-				border-radius: 10px;
-				border: none;
-				outline: none;
-
 				& .login_link {
-					color: #ffffff;
 					font-size: 18px;
-					font-weight: 400;
-					text-decoration: none;
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					width: 100%;
-					height: 100%;
 				}
 			}
 		}
@@ -349,21 +341,8 @@
 			& .user_panel-login {
 				width: 120px;
 				height: 40px;
-				background-color: #627254;
-				border-radius: 10px;
-				border: none;
-				outline: none;
-
 				& .login_link {
-					color: #ffffff;
 					font-size: 22px;
-					font-weight: 400;
-					text-decoration: none;
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					width: 100%;
-					height: 100%;
 				}
 			}
 		}
@@ -388,21 +367,8 @@
 			& .user_panel-login {
 				width: 120px;
 				height: 40px;
-				background-color: #627254;
-				border-radius: 10px;
-				border: none;
-				outline: none;
-
 				& .login_link {
-					color: #ffffff;
 					font-size: 22px;
-					font-weight: 400;
-					text-decoration: none;
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					width: 100%;
-					height: 100%;
 				}
 			}
 		}

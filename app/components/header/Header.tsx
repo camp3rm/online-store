@@ -1,12 +1,11 @@
 'use client';
-import React, { use, useState } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import './header.scss';
 import logo from '@assets/Logo.svg';
 import search_icon from '@assets/search-icon.svg';
 import basket_icon from '@assets/basket-icon.svg';
 import Image from 'next/image';
-import Button from '@components/ui/Button';
 
 export default function Header() {
 	const [status, setStatus] = useState<string>('close');
@@ -83,8 +82,7 @@ export default function Header() {
 				<div className="user_panel-login">
 					<a
 						href="#"
-						className="login_link"
-						text="Вхід">
+						className="login_link">
 						Вхід
 					</a>
 				</div>
@@ -152,8 +150,7 @@ export default function Header() {
 						<div className="user_panel-login">
 							<a
 								href="#"
-								className="login_link"
-								text="Вхід">
+								className="login_link">
 								Вхід
 							</a>
 						</div>

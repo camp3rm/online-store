@@ -89,14 +89,14 @@ export default function Header() {
 			</div>
 			<div
 				onClick={toggleMenuHandler}
-				className="toggle_menu">
-				<span className={`toggle_menu-line ${status}`}></span>
-				<span className={`toggle_menu-line ${status}`}></span>
-				<span className={`toggle_menu-line ${status}`}></span>
+				className={`toggle_menu ${status}`}>
+				<span className="toggle_menu-line"></span>
+				<span className="toggle_menu-line"></span>
+				<span className="toggle_menu-line"></span>
 			</div>
 			{toggleMenu && (
 				<div className="burger_menu-container">
-					<nav className="nav_menu">
+					<nav className="burger_menu">
 						<ul className="burger_menu-list">
 							<li className="nav_list-item">
 								{/* <Link

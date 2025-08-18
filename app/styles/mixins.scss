@@ -1,0 +1,35 @@
+@mixin heading-lg() {
+	font-size: 48px;
+	font-weight: 700;
+	color: #ffffff;
+}
+
+@mixin heading-md() {
+	font-size: 36px;
+	font-weight: 700;
+	color: #ffffff;
+}
+
+@mixin heading-sm() {
+	font-size: 24px;
+	font-weight: 400;
+	color: #ffffff;
+}
+
+@mixin body-lg() {
+		font-size: 20px;
+	font-weight: 400;
+	color: #000000;
+}
+
+@mixin body-md() {
+		font-size: 16px;
+	font-weight: 400;
+	color: #000000;
+}
+
+@mixin body-sm() {
+		font-size: 12px;
+	font-weight: 500;
+	color: #000000;
+}

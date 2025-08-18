@@ -1,0 +1,3 @@
+@function color($group, $variant: normal) {
+  @return map-get(map-get($colors, $group), $variant);
+}

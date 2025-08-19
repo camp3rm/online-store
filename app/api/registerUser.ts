@@ -1,8 +1,14 @@
 
 import axios, { AxiosError } from 'axios';
 import { RegistrationFormData } from '@features/auth/auth.schema';
+export type RegisterUserDto = {
+  name: string;
+  number: string;
+  email: string;
+  password: string;
+};
 
-export const registerUser = async (data: RegistrationFormData) => {
+export const registerUser = async (data: RegisterUserDto) => {
   try {
     const response = await axios.post('/auth/register', data, {
       headers: { 'Content-Type': 'application/json' },

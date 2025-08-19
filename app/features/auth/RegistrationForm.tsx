@@ -20,8 +20,13 @@ export default function RegistrationForm({ showPassword, showPasswordToggle }: P
 	} = useRegistrationForm();
 
 	const onSubmit: SubmitHandler<RegistrationFormData> = async (data) => {
+		     const mappedData = {
+			name: data.firstName,
+			number: data.telephoneNumber,
+			email: data.emailAddress,
+			password: data.password,};
 		try {
-			await registerUser(data);
+			await registerUser(mappedData);
 			alert('Реєстрація пройшла успішно!');
 			reset();
 		} catch (error) {

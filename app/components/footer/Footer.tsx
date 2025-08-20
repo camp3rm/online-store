@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import logo from '@assets/Logo.svg';
 import Image from 'next/image';
+import './footer.scss';
 
 export default function Footer() {
 	return (
@@ -19,30 +20,30 @@ export default function Footer() {
 				<div className="navigation">
 					<div className="catalog_container">
 						<h4 className="catalog_title">Каталог</h4>
-						<ul>
-							<li>Дерева</li>
-							<li>Квіти</li>
-							<li>Кущі</li>
-							<li>Розсада</li>
+						<ul className="catalog_list">
+							<li className='catalog_item'>Дерева</li>
+							<li className='catalog_item'>Квіти</li>
+							<li className='catalog_item'>Кущі</li>
+							<li className='catalog_item'>Розсада</li>
 						</ul>
 					</div>
-					<div>
-						<h4 className="catalog_title">Контакти</h4>
+					<div className="contact_container">
+						<h4 className="contact_title">Контакти</h4>
 					</div>
-					<div>
-						<h4 className="catalog_title">Про Нас</h4>
+					<div className="about_container">
+						<h4 className="about_title">Про Нас</h4>
 					</div>
 				</div>
-				<div className='copyright'>
-					<Image 
+				<div className="copyright">
+					<Image
 						className="copy_icon"
-						src='/icons/copyright.svg'
+						src="/icons/copyright.svg"
 						width={16}
 						height={16}
 						alt="Copyright Icon"
 					/>
-
-					GreenShop 2025</div>
+					<span className="copyright_text">GreenShop 2025</span>
+				</div>
 			</div>
 		</footer>
 	);

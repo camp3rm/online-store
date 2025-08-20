@@ -33,3 +33,9 @@
 	font-weight: 500;
 	color: #000000;
 }
+
+@mixin body-xs() {
+		font-size: 9px;
+	font-weight: 500;
+	color: #000000;
+}

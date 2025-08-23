@@ -15,14 +15,14 @@ export default function RegisterForm() {
 	return (
 		<section className="wrapper_register-form">
 			<div className="register_form-container">
+				<Image
+					src="./register-icon.svg"
+					width={30}
+					height={30}
+					alt="register form"
+					className="register_icon"
+				/>
 				<div className="register_form-head">
-					<Image
-						className="signin_icon"
-						src="/images/sign-up-icon.svg"
-						width={32.5}
-						height={30}
-						alt="sign in"
-					/>
 					<h1 className="register_title">Реєстрація</h1>
 				</div>
 				<Form

@@ -1,0 +1,44 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+@import '../../../styles/function.scss';
+
+.reviews_section {
+		margin-top: 56px;
+
+		& .reviews_section-title {
+			@include body-lg();
+			color: color(green, darker);
+			margin-bottom: 24px;
+			text-align: center;
+		}
+
+		& .reviews_section-container {
+			& .reviews_card-container {
+				margin: 6px 0px;
+				& .reviews_card {
+					background-color: color(white, light-active);
+					border-radius: 10px;
+					padding: 28.5px 24px;
+					display: grid;
+					grid-template-columns: auto 1fr;
+					grid-template-rows: auto 1fr;
+				}
+				& .reviews_card-icon {
+					margin-bottom: 8px;
+				}
+				& .rating {
+					@include body-md();
+					color: color(green, darker);
+					margin-bottom: 8px;
+					align-self: center;
+					margin-left: 8px;
+				}
+				& .reviews_card-text {
+					@include body-sm();
+					color: color(white, darker);
+					grid-column: 1/3;
+				}
+			}
+		}
+	}

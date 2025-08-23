@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import './header.scss';
 import logo from '@assets/Logo.svg';
+import close_button from '@assets/close-icon.svg';
 import search_icon from '@assets/search-icon.svg';
 import basket_icon from '@assets/basket-icon.svg';
 import Image from 'next/image';
@@ -21,8 +22,8 @@ export default function Header() {
 				<Image
 					className="logo_icon"
 					src={logo}
-					width={82}
-					height={75}
+					width={70}
+					height={70}
 					alt="GreenShop"
 				/>
 			</div>
@@ -96,6 +97,27 @@ export default function Header() {
 			</div>
 			{toggleMenu && (
 				<div className="burger_menu-container">
+					<div className="burger_menu-header">
+						<Image
+							className="logo_icon"
+							src={logo}
+							width={70}
+							height={70}
+							alt="GreenShop"
+						/>
+						<button
+							className="close_button"
+							onClick={toggleMenuHandler}
+							type="button">
+							<Image
+								className="close_button-icon"
+								src={close_button}
+								width={70}
+								height={70}
+								alt="Close Button"
+							/>
+						</button>
+					</div>
 					<nav className="burger_menu">
 						<ul className="burger_menu-list">
 							<li className="nav_list-item">
@@ -147,13 +169,13 @@ export default function Header() {
 								alt="basket_icon"
 							/>
 						</div>
-						<div className="user_panel-login">
+						<button className="user_panel-login">
 							<a
 								href="#"
 								className="login_link">
 								Вхід
 							</a>
-						</div>
+						</button>
 					</div>
 				</div>
 			)}

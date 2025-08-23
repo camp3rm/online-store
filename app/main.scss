@@ -50,6 +50,7 @@
 				border: none;
 				outline: none;
 				@include body-lg();
+				color: #000000;
 				background-color: color(white, light);
 			}
 		}
@@ -75,16 +76,6 @@
 				overflow: hidden;
 			}
 
-			& .slick-prev,
-			& .slick-next {
-				position: static !important;
-				transform: none !important;
-				background: #eee;
-				padding: 8px 16px;
-				border-radius: 6px;
-				cursor: pointer;
-				height: 20px;
-			}
 
 			& .slick-prev {
 				grid-column: 1/2;
@@ -152,7 +143,7 @@
 						margin-top: 2px;
 
 						& .catalog_offers-card-title {
-							@include body-lg();
+							@include body-md();
 							color: color(green, dark-active);
 						}
 
@@ -192,6 +183,7 @@
 				@include body-sm();
 				color: color(green, dark-hover);
 				text-align: center;
+				
 			}
 		}
 
@@ -304,7 +296,7 @@
 					padding: 28.5px 24px;
 
 					& .faq_card-question {
-						@include body-md();
+						@include body-sm();
 						color: color(green, darker);
 						align-self: center;
 					}
@@ -314,8 +306,8 @@
 						display: flex;
 						justify-content: center;
 						align-items: center;
-						width: 44px;
-						height: 44px;
+						width: 30px;
+						height: 30px;
 						background-color: color(white, light);
 						border-radius: 26px;
 						margin-left: 10px;
@@ -336,7 +328,6 @@
 				}
 				& .hero_section-description {
 					@include body-lg();
-
 					color: #fffffa;
 				}
 			}
@@ -368,7 +359,7 @@
 						}
 						& .catalog_offers-card-content {
 							& .catalog_offers-card-title {
-								@include body-lg();
+								@include body-md();
 							}
 						}
 					}
@@ -390,7 +381,7 @@
 					@include body-lg();
 				}
 				& .benefits_section-description {
-					@include body-md();
+					@include body-sm();
 				}
 			}
 
@@ -402,11 +393,11 @@
 						& .expert_consultation,
 						& .eco_packaging {
 							& h5 {
-								@include body-lg();
+								@include body-md();
 							}
 						}
 						& span {
-							@include body-md();
+							@include body-sm();
 						}
 					}
 				}
@@ -423,7 +414,7 @@
 						@include body-md();
 					}
 					& .reviews_card-text {
-						@include body-md();
+						@include body-sm();
 					}
 				}
 			}
@@ -441,7 +432,11 @@
 				& .faq_card-container {
 					& .faq_card {
 						& .faq_card-question {
-							@include body-md();
+							@include body-sm();
+						}
+						& .icon-box {
+							width: 30px;
+							height: 30px;
 						}
 					}
 				}
@@ -530,13 +525,13 @@
 						& .expert_consultation,
 						& .eco_packaging {
 							& h5 {
-								@include body-lg();
+								@include body-md();
 								color: color(green, darker);
 							}
 						}
 
 						& span {
-							@include body-md();
+							@include body-sm();
 						}
 					}
 				}
@@ -560,7 +555,7 @@
 						@include body-md();
 					}
 					& .reviews_card-text {
-						@include body-md();
+						@include body-sm();
 					}
 				}
 			}
@@ -595,7 +590,7 @@
 					@include heading-md();
 				}
 				& .hero_section-description {
-					@include body-lg();
+					@include heading-sm();
 				}
 			}
 			& .to_catalog {
@@ -647,7 +642,7 @@
 					color: #000000;
 				}
 				& .benefits_section-description {
-					@include body-lg();
+					@include body-md();
 				}
 			}
 
@@ -740,6 +735,8 @@
 			& .to_catalog {
 				& .to_catalog-button {
 					@include heading-sm();
+					color: #000000;
+					min-width: 450px;
 				}
 			}
 		}
@@ -765,7 +762,7 @@
 						& .catalog_offers-card-content {
 							& .catalog_offers-card-title {
 								@include heading-sm();
-								color: #000000;
+								color: color(green, darker);
 							}
 						}
 					}
@@ -836,7 +833,7 @@
 						@include body-lg();
 					}
 					& .reviews_card-text {
-						@include body-lg();
+						@include body-md();
 					}
 				}
 			}
@@ -847,7 +844,8 @@
 				color: #020201;
 			}
 			& .faq_section-description {
-				@include body-lg();
+				@include heading-sm();
+				color: #000000;
 			}
 
 			& .faq_section-container {
@@ -927,7 +925,7 @@
 					@include heading-md();
 					color: #000000;
 				}
-				& .benefits_section-description {
+				& p {
 					@include heading-sm();
 					color: #000000;
 				}
@@ -940,20 +938,20 @@
 				gap: 4px 16px;
 				& .benefits_card {
 					& .benefits_card-container {
-						height: 120px;
+						height: 150px;
 
 						& .granteed_quality,
 						& .free_delivery,
 						& .expert_consultation,
 						& .eco_packaging {
 							& h5 {
-								@include heading-md();
+								@include heading-sm();
 								color: color(green, darker);
 							}
 						}
 
 						& span {
-							@include body-md();
+							@include body-lg();
 						}
 					}
 				}
@@ -992,7 +990,8 @@
 				color: #020201;
 			}
 			& .faq_section-description {
-				@include body-lg();
+				@include heading-sm();
+				color: #000000;
 			}
 
 			& .faq_section-container {

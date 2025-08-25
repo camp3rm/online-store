@@ -1,0 +1,1009 @@
+@import './styles/mixins.scss';
+@import './styles/variables.scss';
+@import './styles/colors.scss';
+@import './styles/function.scss';
+
+.main_page {
+	max-width: 1440px;
+	min-width: 320px;
+	width: 100%;
+	margin: 0px auto;
+	padding: 0;
+	background-color: #ffffff;
+	padding: 10px;
+
+	& .hero_section {
+		background-image: url('./assets/images/hero\ image.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		width: 100%;
+		height: 700px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: start;
+		& .hero_section-header {
+			margin-top: 96px;
+			max-width: 858px;
+			margin-bottom: 19px;
+			& .hero_section-title {
+				@include heading-sm();
+				margin: 0 19px;
+				text-align: center;
+				color: #fffffa;
+			}
+			& .hero_section-description {
+				@include body-sm();
+				margin: 0 19px;
+				margin-top: 8px;
+				text-align: center;
+				color: #fffffa;
+			}
+		}
+		& .to_catalog {
+			& .to_catalog-button {
+				margin: 78px 19px 0;
+				min-width: 270px;
+				height: 52px;
+				border-radius: 10px;
+				border: none;
+				outline: none;
+				@include body-lg();
+				color: #000000;
+				background-color: color(white, light);
+			}
+		}
+	}
+
+	& .catalog_offers_section {
+		margin: 56px 16px;
+		& .catalog_offers-container {
+			& .slick-slider {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: 1fr auto;
+			}
+
+			& .slider-controls {
+				display: flex;
+				justify-content: center;
+				gap: 16px;
+			}
+
+			.slick-slide > div {
+				height: 100%;
+				overflow: hidden;
+			}
+
+
+			& .slick-prev {
+				grid-column: 1/2;
+				grid-row: 2/3;
+				background-image: url(../app/assets/left-arrow-icon.svg);
+			}
+
+			& .slick-next {
+				grid-column: 2/3;
+				grid-row: 2/3;
+				background-image: url(../app/assets/right-arrow-icon.svg);
+			}
+
+			& .slick-prev,
+			& .slick-next {
+				margin: 0 auto;
+				margin-top: 5px;
+				border: none;
+				outline: none;
+				height: 15px;
+				width: 50px;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-color: transparent;
+			}
+
+			& .slick-list {
+				display: flex;
+				overflow: hidden;
+				grid-column: 1/3;
+				grid-row: 1/2;
+				margin: 0 15px;
+			}
+
+			& .slick-track {
+				display: flex !important;
+			}
+
+			& .slick-slide {
+				display: flex !important;
+				justify-content: center;
+			}
+
+			& .catalog_offers-title {
+				@include body-lg();
+				text-align: center;
+				color: #0a2308;
+			}
+			& .catalog_offers-description {
+				margin-top: 16px;
+				@include body-sm();
+				color: color(green, dark-hover);
+				text-align: center;
+				word-wrap: normal;
+			}
+			& .catalog_offers-cards {
+				margin-top: 32px;
+
+				& .catalog_offers-card {
+					& .catalog_offers-card-content {
+						display: flex;
+						flex-direction: row;
+						justify-content: space-between;
+						align-items: center;
+						margin-top: 2px;
+
+						& .catalog_offers-card-title {
+							@include body-md();
+							color: color(green, dark-active);
+						}
+
+						& .catalog_offers-card-link {
+							color: color(green, dark-active);
+							@include body-lg();
+							text-decoration: none;
+						}
+					}
+				}
+			}
+		}
+		& .catalog_offers-link {
+			margin-top: 12px;
+			width: 100%;
+			text-align: center;
+			& .catalog_offers-link-text {
+				@include body-lg();
+				color: color(green, darker);
+			}
+		}
+	}
+
+	& .benefits_section {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		& .benefits_section-header {
+			& .benefits_section-title {
+				@include body-lg();
+				color: color(green, darker);
+				text-align: center;
+				margin-bottom: 14px;
+			}
+			& .benefits_section-description {
+				@include body-sm();
+				color: color(green, dark-hover);
+				text-align: center;
+				
+			}
+		}
+
+		& .benefits_cards {
+			& .benefits_card {
+				margin: 8px 0px;
+				& .benefits_card-container {
+					background-color: color(green, light);
+					border-radius: 10px;
+					padding: 28.5px 24px;
+
+					& .granteed_quality,
+					& .free_delivery,
+					& .expert_consultation,
+					& .eco_packaging {
+						display: grid;
+						grid-template-columns: auto 1fr;
+						align-items: center;
+
+						margin-bottom: 12px;
+
+						& h5 {
+							@include body-md();
+							color: color(green, darker);
+							line-height: 1.2;
+						}
+						& .granteed_quality-icon,
+						& .free_delivery-icon,
+						& .expert_consultation-icon,
+						& .eco_packaging-icon {
+							margin-right: 15px;
+						}
+					}
+
+					& span {
+						@include body-sm();
+						color: color(green, darker);
+						margin-top: auto;
+					}
+				}
+			}
+		}
+	}
+
+	& .reviews_section {
+		margin-top: 56px;
+
+		& .reviews_section-title {
+			@include body-lg();
+			color: color(green, darker);
+			margin-bottom: 24px;
+			text-align: center;
+		}
+
+		& .reviews_section-container {
+			& .reviews_card-container {
+				margin: 6px 0px;
+				& .reviews_card {
+					background-color: color(white, light-active);
+					border-radius: 10px;
+					padding: 28.5px 24px;
+					display: grid;
+					grid-template-columns: auto 1fr;
+					grid-template-rows: auto 1fr;
+				}
+				& .reviews_card-icon {
+					margin-bottom: 8px;
+				}
+				& .rating {
+					@include body-md();
+					color: color(green, darker);
+					margin-bottom: 8px;
+					align-self: center;
+					margin-left: 8px;
+				}
+				& .reviews_card-text {
+					@include body-sm();
+					color: color(white, darker);
+					grid-column: 1/3;
+				}
+			}
+		}
+	}
+
+	& .faq_section {
+		margin-top: 56px;
+		& .faq_section-title {
+			@include body-lg();
+			color: #020201;
+			text-align: center;
+			margin-bottom: 14px;
+		}
+		& .faq_section-description {
+			@include body-md();
+			color: #6e6e69;
+			text-align: center;
+		}
+
+		& .faq_section-container {
+			margin-top: 24px;
+			& .faq_card-container {
+				margin: 6px 0px;
+
+				& .faq_card {
+					display: grid;
+					grid-template-columns: 1fr auto;
+					place-content: center;
+					background-color: color(green, light);
+					border-radius: 10px;
+					padding: 28.5px 24px;
+
+					& .faq_card-question {
+						@include body-sm();
+						color: color(green, darker);
+						align-self: center;
+					}
+
+					& .icon-box {
+						justify-self: end;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						width: 30px;
+						height: 30px;
+						background-color: color(white, light);
+						border-radius: 26px;
+						margin-left: 10px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.999px) {
+	.main_page {
+		& .hero_section {
+			& .hero_section-header {
+				& .hero_section-title {
+					@include heading-md();
+					color: #fffffa;
+				}
+				& .hero_section-description {
+					@include body-lg();
+					color: #fffffa;
+				}
+			}
+			& .to_catalog {
+				& .to_catalog-button {
+					@include body-lg();
+					background-color: color(white, light);
+					min-width: 450px;
+				}
+			}
+		}
+		& .catalog_offers_section {
+			& .catalog_offers-container {
+				& .catalog_offers-title {
+					@include body-lg();
+				}
+				& .catalog_offers-description {
+					@include body-md();
+				}
+				& .catalog_offers-cards {
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+					grid-template-rows: 1fr 1fr;
+					gap: 10px;
+					& .catalog_offers-card {
+						& .catalog_offers-card-image {
+							width: 100%;
+							height: auto;
+						}
+						& .catalog_offers-card-content {
+							& .catalog_offers-card-title {
+								@include body-md();
+							}
+						}
+					}
+				}
+			}
+			& .catalog_offers-link {
+				margin-top: 12px;
+				width: 100%;
+				text-align: center;
+				& .catalog_offers-link-text {
+					@include body-lg();
+					color: color(green, darker);
+				}
+			}
+		}
+		& .benefits_section {
+			& .benefits_section-header {
+				& .benefits_section-title {
+					@include body-lg();
+				}
+				& .benefits_section-description {
+					@include body-sm();
+				}
+			}
+
+			& .benefits_cards {
+				& .benefits_card {
+					& .benefits_card-container {
+						& .granteed_quality,
+						& .free_delivery,
+						& .expert_consultation,
+						& .eco_packaging {
+							& h5 {
+								@include body-md();
+							}
+						}
+						& span {
+							@include body-sm();
+						}
+					}
+				}
+			}
+		}
+		& .reviews_section {
+			& .reviews_section-title {
+				@include body-lg();
+			}
+
+			& .reviews_section-container {
+				& .reviews_card-container {
+					& .rating {
+						@include body-md();
+					}
+					& .reviews_card-text {
+						@include body-sm();
+					}
+				}
+			}
+		}
+		& .faq_section {
+			& .faq_section-title {
+				@include body-lg();
+				color: #020201;
+			}
+			& .faq_section-description {
+				@include body-md();
+			}
+
+			& .faq_section-container {
+				& .faq_card-container {
+					& .faq_card {
+						& .faq_card-question {
+							@include body-sm();
+						}
+						& .icon-box {
+							width: 30px;
+							height: 30px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.999px) {
+	.main_page {
+		& .hero_section {
+			& .hero_section-header {
+				& .hero_section-title {
+					@include heading-md();
+				}
+				& .hero_section-description {
+					@include body-lg();
+					color: #fffffa
+				}
+			}
+			& .to_catalog {
+				& .to_catalog-button {
+					@include body-lg();
+
+					min-width: 450px;
+				}
+			}
+		}
+		& .catalog_offers_section {
+			& .catalog_offers-container {
+				& .catalog_offers-title {
+					@include body-lg();
+				}
+				& .catalog_offers-description {
+					@include body-md();
+				}
+				& .catalog_offers-cards {
+				display: flex;
+					flex-direction: row;
+							gap: 10px;
+					& .catalog_offers-card {
+						& .catalog_offers-card-image {
+							width: 100%;
+							height: auto;
+						}
+						& .catalog_offers-card-content {
+							& .catalog_offers-card-title {
+								@include body-md();
+							}
+						}
+					}
+				}
+			}
+			& .catalog_offers-link {
+				margin-top: 12px;
+				width: 100%;
+				text-align: center;
+				& .catalog_offers-link-text {
+					@include body-lg();
+					color: color(green, darker);
+				}
+			}
+		}
+		& .benefits_section {
+			margin: 0 50px;
+			& .benefits_section-header {
+				& .benefits_section-title {
+					@include body-lg();
+				}
+				& .benefits_section-description {
+					@include body-md();
+				}
+			}
+
+			& .benefits_cards {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: repeat(2, 1fr);
+				gap: 4px 16px;
+				& .benefits_card {
+					& .benefits_card-container {
+						height: 170px;
+
+						& .granteed_quality,
+						& .free_delivery,
+						& .expert_consultation,
+						& .eco_packaging {
+							& h5 {
+								@include body-md();
+								color: color(green, darker);
+							}
+						}
+
+						& span {
+							@include body-sm();
+						}
+					}
+				}
+			}
+		}
+		& .reviews_section {
+			margin: 76px 170px 0;
+			& .reviews_section-title {
+				@include body-lg();
+			}
+
+			& .reviews_section-container {
+				& .reviews_card-container {
+					& .reviews_card {
+						display: grid;
+						grid-template-columns: auto 1fr;
+						grid-template-rows: auto 1fr;
+					}
+
+					& .rating {
+						@include body-md();
+					}
+					& .reviews_card-text {
+						@include body-sm();
+					}
+				}
+			}
+		}
+		& .faq_section {
+			& .faq_section-title {
+				@include body-lg();
+				color: #020201;
+			}
+			& .faq_section-description {
+				@include body-md();
+			}
+
+			& .faq_section-container {
+				& .faq_card-container {
+					& .faq_card {
+						& .faq_card-question {
+							@include body-md();
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200.999px) {
+	.main_page {
+		& .hero_section {
+			& .hero_section-header {
+				& .hero_section-title {
+					@include heading-md();
+				}
+				& .hero_section-description {
+					@include heading-sm();
+				}
+			}
+			& .to_catalog {
+				& .to_catalog-button {
+					@include body-lg();
+
+					min-width: 450px;
+				}
+			}
+		}
+		& .catalog_offers_section {
+			& .catalog_offers-container {
+				& .catalog_offers-title {
+					@include heading-sm();
+					color: #000000;
+				}
+				& .catalog_offers-description {
+					@include body-lg();
+				}
+				& .catalog_offers-cards {
+					display: flex;
+					flex-direction: row;
+							gap: 10px;
+					& .catalog_offers-card {
+						& .catalog_offers-card-image {
+							width: 100%;
+							height: auto;
+						}
+						& .catalog_offers-card-content {
+							& .catalog_offers-card-title {
+								@include body-lg();
+							}
+						}
+					}
+				}
+			}
+			& .catalog_offers-link {
+				& .catalog_offers-link-text {
+					@include heading-sm();
+					color: color(green, darker);
+				}
+			}
+		}
+		& .benefits_section {
+			margin: 0 50px;
+			& .benefits_section-header {
+				& .benefits_section-title {
+					@include heading-sm();
+					color: #000000;
+				}
+				& .benefits_section-description {
+					@include body-md();
+				}
+			}
+
+			& .benefits_cards {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: repeat(2, 1fr);
+				gap: 4px 16px;
+				& .benefits_card {
+					& .benefits_card-container {
+						height: 140px;
+
+						& .granteed_quality,
+						& .free_delivery,
+						& .expert_consultation,
+						& .eco_packaging {
+							& h5 {
+								@include body-lg();
+								color: color(green, darker);
+							}
+						}
+
+						& span {
+							@include body-md();
+						}
+					}
+				}
+			}
+		}
+		& .reviews_section {
+			& .reviews_section-title {
+				@include heading-sm();
+				color: #000000;
+			}
+
+			& .reviews_section-container {
+				margin: 0 15px;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: 1fr 1fr;
+				gap: 0 12px;
+
+				& .reviews_card-container {
+					& .reviews_card {
+						height: 100%;
+					}
+
+					& .rating {
+						@include body-lg();
+					}
+					& .reviews_card-text {
+						@include body-md();
+					}
+				}
+			}
+		}
+		& .faq_section {
+			& .faq_section-title {
+				@include heading-sm();
+				color: #020201;
+			}
+			& .faq_section-description {
+				@include body-lg();
+			}
+
+			& .faq_section-container {
+				& .faq_card-container {
+					& .faq_card {
+						& .faq_card-question {
+							@include body-md();
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1440.999px) {
+	.main_page {
+		& .hero_section {
+			& .hero_section-header {
+				& .hero_section-title {
+					@include heading-lg();
+				}
+				& .hero_section-description {
+					@include heading-sm();
+				}
+			}
+			& .to_catalog {
+				& .to_catalog-button {
+					@include heading-sm();
+					color: #000000;
+					min-width: 450px;
+				}
+			}
+		}
+		& .catalog_offers_section {
+			& .catalog_offers-container {
+				& .catalog_offers-title {
+					@include heading-md();
+					color: #000000;
+				}
+				& .catalog_offers-description {
+					@include heading-sm();
+					color: #000000;
+				}
+				& .catalog_offers-cards {
+					display: flex;
+					flex-direction: row;
+							gap: 10px;
+					& .catalog_offers-card {
+						& .catalog_offers-card-image {
+							width: 100%;
+							height: auto;
+						}
+						& .catalog_offers-card-content {
+							& .catalog_offers-card-title {
+								@include heading-sm();
+								color: color(green, darker);
+							}
+						}
+					}
+				}
+			}
+			& .catalog_offers-link {
+				& .catalog_offers-link-text {
+					@include heading-sm();
+					color: color(green, darker);
+				}
+			}
+		}
+		& .benefits_section {
+			margin: 0 50px;
+			& .benefits_section-header {
+				& .benefits_section-title {
+					@include heading-md();
+					color: #000000;
+				}
+				& .benefits_section-description {
+					@include heading-sm();
+					color: #000000;
+				}
+			}
+
+			& .benefits_cards {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: repeat(2, 1fr);
+				gap: 4px 16px;
+				& .benefits_card {
+					& .benefits_card-container {
+						height: 150px;
+
+						& .granteed_quality,
+						& .free_delivery,
+						& .expert_consultation,
+						& .eco_packaging {
+							& h5 {
+								@include heading-sm();
+								color: color(green, darker);
+							}
+						}
+
+						& span {
+							@include body-lg();
+						}
+					}
+				}
+			}
+		}
+		// ADD SLIDER
+		& .reviews_section {
+			& .reviews_section-title {
+				@include heading-md();
+				color: #000000;
+			}
+
+			& .reviews_section-container {
+				& .reviews_card-container {
+					& .reviews_card {
+						display: grid;
+						grid-template-columns: auto 1fr;
+						grid-template-rows: auto 1fr;
+					}
+
+					& .rating {
+						@include body-lg();
+					}
+					& .reviews_card-text {
+						@include body-md();
+					}
+				}
+			}
+		}
+		& .faq_section {
+			& .faq_section-title {
+				@include heading-md();
+				color: #020201;
+			}
+			& .faq_section-description {
+				@include heading-sm();
+				color: #000000;
+			}
+
+			& .faq_section-container {
+				& .faq_card-container {
+					& .faq_card {
+						& .faq_card-question {
+							@include body-md();
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1441px) {
+	.main_page {
+		& .hero_section {
+			& .hero_section-header {
+				& .hero_section-title {
+					@include heading-lg();
+				}
+				& .hero_section-description {
+					@include heading-sm();
+				}
+			}
+
+			& .to_catalog {
+				& .to_catalog-button {
+					@include heading-sm();
+					color: #000000;
+					min-width: 450px;
+				}
+			}
+		}
+		& .catalog_offers_section {
+			& .catalog_offers-container {
+				& .catalog_offers-title {
+					@include heading-md();
+					color: #000000;
+				}
+				& .catalog_offers-description {
+					@include heading-sm();
+					color: #000000;
+				}
+				& .catalog_offers-cards {
+					display: flex;
+					flex-direction: row;
+					gap: 10px;
+					& .catalog_offers-card {
+						& .catalog_offers-card-image {
+							width: 100%;
+							height: auto;
+						}
+						& .catalog_offers-card-content {
+							& .catalog_offers-card-title {
+								@include heading-sm();
+								color: #000000;
+							}
+					
+						}
+					}
+				}
+			}
+			& .catalog_offers-link {
+				& .catalog_offers-link-text {
+					@include heading-sm();
+					color: color(green, darker);
+				
+				}
+			}
+		}
+		& .benefits_section {
+			margin: 0 50px;
+			& .benefits_section-header {
+				& .benefits_section-title {
+					@include heading-md();
+					color: #000000;
+				}
+				& p {
+					@include heading-sm();
+					color: #000000;
+				}
+			}
+
+			& .benefits_cards {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: repeat(2, 1fr);
+				gap: 4px 16px;
+				& .benefits_card {
+					& .benefits_card-container {
+						height: 150px;
+
+						& .granteed_quality,
+						& .free_delivery,
+						& .expert_consultation,
+						& .eco_packaging {
+							& h5 {
+								@include heading-sm();
+								color: color(green, darker);
+							}
+						}
+
+						& span {
+							@include body-lg();
+						}
+					}
+				}
+			}
+		}
+
+		// ADD SLIDER
+		& .reviews_section {
+			margin: 56px 50px 0 50px;
+			& .reviews_section-title {
+				@include heading-md();
+				color: #000000;
+			}
+
+			& .reviews_section-container {
+				& .reviews_card-container {
+					& .reviews_card {
+						display: grid;
+						grid-template-columns: auto 1fr;
+						grid-template-rows: auto 1fr;
+					}
+
+					& .rating {
+						@include body-lg();
+					}
+					& .reviews_card-text {
+						@include body-md();
+					}
+				}
+			}
+		}
+
+		& .faq_section {
+			& .faq_section-title {
+				@include heading-md();
+				color: #020201;
+			}
+			& .faq_section-description {
+				@include heading-sm();
+				color: #000000;
+			}
+
+			& .faq_section-container {
+				& .faq_card-container {
+					& .faq_card {
+						& .faq_card-question {
+							@include body-lg();
+							
+						}
+					}
+				}
+			}
+		}
+	}
+}

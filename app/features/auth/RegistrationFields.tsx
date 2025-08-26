@@ -1,4 +1,3 @@
-// components/RegistrationFields.tsx
 import React from 'react';
 import InputField from '@ui/Input';
 import ShowPasswordButton from '@ui/ShowPassword';

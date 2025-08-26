@@ -38,47 +38,42 @@ const Login = () => {
   };
 
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  const value = e.target.value;
+		const value = e.target.value;
 
-  // визначаємо новий реальний пароль
-  let newRealPassword = realPassword;
-  if (value.length > realPassword.length) {
-    // додано символ
-    newRealPassword = realPassword + value[value.length - 1];
-  } else {
-    // видалено символ
-    newRealPassword = realPassword.slice(0, value.length);
-  }
+		let newRealPassword = realPassword;
+		if (value.length > realPassword.length) {
+			newRealPassword = realPassword + value[value.length - 1];
+		} else {
+			newRealPassword = realPassword.slice(0, value.length);
+		}
 
-  setRealPassword(newRealPassword);
+		setRealPassword(newRealPassword);
 
-  if (!showFullPassword) {
-    const starsCount = Math.max(0, newRealPassword.length - 1);
-    const lastChar = value.length > realPassword.length ? value[value.length - 1] : '';
-    const masked = '●'.repeat(starsCount) + lastChar;
-    setDisplayPassword(masked);
+		if (!showFullPassword) {
+			const starsCount = Math.max(0, newRealPassword.length - 1);
+			const lastChar =
+				value.length > realPassword.length ? value[value.length - 1] : '';
+			const masked = '●'.repeat(starsCount) + lastChar;
+			setDisplayPassword(masked);
 
-    // ховаємо останній символ через 1 сек
-    if (hideTimeout.current) clearTimeout(hideTimeout.current);
-    hideTimeout.current = setTimeout(() => {
-      setDisplayPassword('●'.repeat(newRealPassword.length));
-    }, 1000);
-  } else {
-    setDisplayPassword(newRealPassword);
-  }
-};
+			if (hideTimeout.current) clearTimeout(hideTimeout.current);
+			hideTimeout.current = setTimeout(() => {
+				setDisplayPassword('●'.repeat(newRealPassword.length));
+			}, 1000);
+		} else {
+			setDisplayPassword(newRealPassword);
+		}
+	};
 
-  const toggleShowPassword = () => {
-    setShowFullPassword(prev => !prev);
-    if (!showFullPassword) {
-      // показати весь пароль
-      setDisplayPassword(realPassword);
-      if (hideTimeout.current) clearTimeout(hideTimeout.current);
-    } else {
-      // повернутися до маски
-      setDisplayPassword('*'.repeat(realPassword.length));
-    }
-  };
+	const toggleShowPassword = () => {
+		setShowFullPassword((prev) => !prev);
+		if (!showFullPassword) {
+			setDisplayPassword(realPassword);
+			if (hideTimeout.current) clearTimeout(hideTimeout.current);
+		} else {
+			setDisplayPassword('*'.repeat(realPassword.length));
+		}
+	};
 
   return (
     <div className='wrapper_login-form'>

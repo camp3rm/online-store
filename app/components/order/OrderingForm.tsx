@@ -20,14 +20,12 @@ export default function OrderingForm() {
 				<form className="form">
 					<InputField
 						type="text"
-						label="full_name"
 						placeholder="ПІБ"
 						required
 						className="form_input"
 					/>
 					<InputField
 						type="tel"
-						label="telefon_nubmer"
 						placeholder="Номер телефону"
 						required
 						className="form_input"
@@ -37,18 +35,16 @@ export default function OrderingForm() {
 							type="checkbox"
 							className="order_note-checkbox"
 						/>
-						<span className="checkmark"></span>
-						Не телефонуйте мені для підтвердження замовлення
+						<span>Не телефонуйте мені для підтвердження замовлення</span>
 					</div>
 					<InputField
 						type="email"
-						label="email"
 						placeholder="E-mail"
 						required
 						className="form_input"
 					/>
 					<textarea
-						className="form_input"
+						className="form_input textarea_input"
 						placeholder="Коментар до замовлення"
 					/>
 				</form>
@@ -59,7 +55,8 @@ export default function OrderingForm() {
 						alt="Product name"
 						src={logo}
 						width={100}
-						height={100}
+						height={128}
+						className="product_image"
 					/>
 
 					<div className="ordering_description">
@@ -67,19 +64,7 @@ export default function OrderingForm() {
 						<h3 className="product_original-name">(Hopea odorata)</h3>
 						<span className="products_id">Код: 256</span>
 						<span className="product_quantity">Кількість: 2</span>
-						<span className="product_proce">2500 ₴</span>
-						<div className="order_summary">
-							<div className="left_col">
-								<span className="total_price">Сума замовлення</span>
-								<span className="discount">Сума знижки</span>
-								<span className="summary">Усього</span>
-							</div>
-							<div className="right_col">
-								<span className="numeric">15000</span>
-								<span className="numeric">1000</span>
-								<span className="numeric">14000</span>
-							</div>
-						</div>
+						<span className="product_price">2500 ₴</span>
 					</div>
 				</div>
 				<div className="ordering_product">
@@ -87,7 +72,8 @@ export default function OrderingForm() {
 						alt="Product name"
 						src={logo}
 						width={100}
-						height={100}
+						height={128}
+						className="product_image"
 					/>
 
 					<div className="ordering_description">
@@ -95,19 +81,7 @@ export default function OrderingForm() {
 						<h3 className="product_original-name">(Hopea odorata)</h3>
 						<span className="products_id">Код: 256</span>
 						<span className="product_quantity">Кількість: 2</span>
-						<span className="product_proce">2500 ₴</span>
-						<div className="order_summary">
-							<div className="left_col">
-								<span className="total_price">Сума замовлення</span>
-								<span className="discount">Сума знижки</span>
-								<span className="summary">Усього</span>
-							</div>
-							<div className="right_col">
-								<span className="numeric">15000</span>
-								<span className="numeric">1000</span>
-								<span className="numeric">14000</span>
-							</div>
-						</div>
+						<span className="product_price">2500 ₴</span>
 					</div>
 				</div>
 				<div className="ordering_product">
@@ -115,7 +89,8 @@ export default function OrderingForm() {
 						alt="Product name"
 						src={logo}
 						width={100}
-						height={100}
+						height={128}
+						className="product_image"
 					/>
 
 					<div className="ordering_description">
@@ -123,48 +98,51 @@ export default function OrderingForm() {
 						<h3 className="product_original-name">(Hopea odorata)</h3>
 						<span className="products_id">Код: 256</span>
 						<span className="product_quantity">Кількість: 2</span>
-						<span className="product_proce">2500 ₴</span>
-						<div className="order_summary">
-							<div className="left_col">
-								<span className="total_price">Сума замовлення</span>
-								<span className="discount">Сума знижки</span>
-								<span className="summary">Усього</span>
-							</div>
-							<div className="right_col">
-								<span className="numeric">15000</span>
-								<span className="numeric">1000</span>
-								<span className="numeric">14000</span>
-							</div>
-						</div>
+						<span className="product_price">2500 ₴</span>
 					</div>
 				</div>
-				<div className="shipping_info">
-					<h2 className="shipping_info-title">Інформація про доставку</h2>
-					<span className="delivery_methods">Спосіб доставки</span>
-					<div className="delivery_methods_container">
-						<div className="new_post-method">
-							<InputField
-								type="checkbox"
-								className="delivery_method"
-							/>
-							Нова пошта
-						</div>
-						<div className="ukr_post-method">
-							<InputField
-								type="checkbox"
-								className="delivery_method"
-							/>
-							Укрпошта
-						</div>
-						<div className="courier_post-method">
-							<InputField
-								type="checkbox"
-								className="delivery_method"
-							/>
-							Доставка кур’єром
-						</div>
+				<div className="order_summary">
+					<div className="top_row">
+						<span className="total_price">Сума замовлення</span>
+						<span className="numeric">15000</span>
+					</div>
+					<div className="middle_row">
+						<span className="discount">Сума знижки</span>
+						<span className="numeric">1000</span>
+					</div>
+					<div className="bottom_row">
+						<span className="summary">Усього</span>
+						<span className="numeric">14000</span>
+					</div>
+				</div>
+			</div>
+			<div className="shipping_info">
+				<h2 className="shipping_info-title">Інформація про доставку</h2>
+				<span className="delivery_methods">Спосіб доставки</span>
+				<div className="delivery_methods_container">
+					<div className="new_post-method">
+						<InputField
+							type="checkbox"
+							className="delivery_method"
+						/>
+						<span>Нова пошта</span>
+					</div>
+					<div className="ukr_post-method">
+						<InputField
+							type="checkbox"
+							className="delivery_method"
+						/>
+						<span>Укрпошта</span>
+					</div>
+					<div className="courier_post-method">
+						<InputField
+							type="checkbox"
+							className="delivery_method"
+						/>
+						<span>Доставка кур’єром</span>
+					</div>
 
-						{/* Якщо вибрано Курєра появляєтсья поле для вписання адреси
+					{/* Якщо вибрано Курєра появляєтсья поле для вписання адреси
               Потрібен функціонал   
               Якщо інший метод, появляється поел для вписання номеру відділення пошти
               
@@ -176,34 +154,34 @@ export default function OrderingForm() {
               name='address'
               placeholder='Вкажіть адресу доставки'
 />} */}
-					</div>
 				</div>
-				<div className="payment_methods">
-					<h2>Оплата</h2>
-					<div className="payment_methods">
-						<div className="payment_method">
-							<InputField
-								type="checkbox"
-								className="payment_checkbox"
-							/>
-							Онлайн оплата{' '}
-						</div>
-						<div className="payment_method">
-							<InputField
-								type="checkbox"
-								className="payment_checkbox"
-							/>
-							Оплата кур’єру{' '}
-						</div>
-						<div className="payment_method">
-							<InputField
-								type="checkbox"
-								className="payment_checkbox"
-							/>
-							Готівкою при доставці{' '}
-						</div>
+			</div>
+			<div className="payment_methods">
+				<h2 className="payment_methods-title">Оплата</h2>
+				<div className="payment_methods-container">
+					<div className="payment_method">
+						<InputField
+							type="checkbox"
+							className="payment_checkbox"
+						/>
+						<span>Онлайн оплата</span>
+					</div>
+					<div className="payment_method">
+						<InputField
+							type="checkbox"
+							className="payment_checkbox"
+						/>
+						<span>Оплата кур’єру</span>
+					</div>
+					<div className="payment_method">
+						<InputField
+							type="checkbox"
+							className="payment_checkbox"
+						/>
+						<span>Готівкою при доставці</span>
+					</div>
 
-						{/* Якщо вибрано Курєра появляєтсья поле для вписання адреси
+					{/* Якщо вибрано Курєра появляєтсья поле для вписання адреси
               Потрібен функціонал   
               Якщо інший метод, появляється поел для вписання номеру відділення пошти
               
@@ -215,18 +193,17 @@ export default function OrderingForm() {
               name='address'
               placeholder='Вкажіть адресу доставки'
 />} */}
-					</div>
 				</div>
-				<div className="order_actions">
-					<Button
-						className="confirm_order"
-						text="Підтвердити замовлення"
-					/>
-					<Button
-						className="return_to-shopping"
-						text="Повернутись до покупок"
-					/>
-				</div>
+			</div>
+			<div className="order_actions">
+				<Button
+					className="confirm_order"
+					text="Підтвердити замовлення"
+				/>
+				<Button
+					className="return_to-shopping"
+					text="Повернутись до покупок"
+				/>
 			</div>
 		</div>
 	);

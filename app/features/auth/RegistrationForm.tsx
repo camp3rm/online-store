@@ -11,7 +11,10 @@ type Props = {
 	showPasswordToggle: () => void;
 };
 
-export default function RegistrationForm({ showPassword, showPasswordToggle }: Props) {
+export default function RegistrationForm({
+	showPassword,
+	showPasswordToggle,
+}: Props) {
 	const {
 		register,
 		handleSubmit,
@@ -20,11 +23,12 @@ export default function RegistrationForm({ showPassword, showPasswordToggle }: P
 	} = useRegistrationForm();
 
 	const onSubmit: SubmitHandler<RegistrationFormData> = async (data) => {
-		     const mappedData = {
+		const mappedData = {
 			name: data.firstName,
 			number: data.telephoneNumber,
 			email: data.emailAddress,
-			password: data.password,};
+			password: data.password,
+		};
 		try {
 			await registerUser(mappedData);
 			alert('Реєстрація пройшла успішно!');
@@ -36,7 +40,10 @@ export default function RegistrationForm({ showPassword, showPasswordToggle }: P
 	};
 
 	return (
-		<form onSubmit={handleSubmit(onSubmit)} className="register_form" noValidate>
+		<form
+			onSubmit={handleSubmit(onSubmit)}
+			className="register_form"
+			noValidate>
 			<div className="input_box">
 				<RegistrationFields
 					register={register}

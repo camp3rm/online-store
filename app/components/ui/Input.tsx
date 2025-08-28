@@ -5,7 +5,7 @@ type InputFieldProps = React.InputHTMLAttributes<HTMLInputElement> & {
 	placeholder?: string;
 	name?: string;
 	type?: string;
-	ref: RefCallback<HTMLInputElement>;
+	ref?: RefCallback<HTMLInputElement>;
 };
 
 const InputField = ({

@@ -1,6 +1,6 @@
 'use client';
 import './cart.scss';
-import { CartCardProps } from '@components/cart/FlowerInterface';
+import { CartCardProps } from 'vet/cart/FlowerInterface';
 import { useState } from 'react';
 
 

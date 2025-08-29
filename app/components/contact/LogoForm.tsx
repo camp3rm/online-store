@@ -1,4 +1,4 @@
-import logo from '@assets/Logo.svg';
+import logo from 'vet/online-store/app/assets/Logo.svg';
 import Image from 'next/image';
 import { LogoFormProps } from './IContact';
 

@@ -1,11 +1,11 @@
 'use client';
 
 import React from 'react';
-import OrderSummary from '@components/contact/OrderSummary';
-import flowerData from '@/app/_data/flowerData';
-import CartCard from '@components/cart/CartCard';
+import OrderSummary from 'vet/contact/OrderSummary';
+import flowerData from 'vet/online-store/app/_data/flowerData';
+import CartCard from 'vet/online-store/app/components/cart/CartCard';
 import './ContactMain.scss';
-import ContactForm from '@components/contact/ContactForm';
+import ContactForm from 'vet/contact/ContactForm';
 
 
 function ContactMain() {

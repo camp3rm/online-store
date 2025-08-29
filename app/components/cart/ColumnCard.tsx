@@ -1,7 +1,7 @@
-import CartCard from '@components/cart/CartCard';
-import flowerData from '@/app/_data/flowerData';
+import CartCard from 'vet/cart/CartCard';
+import flowerData from 'vet/online-store/app/_data/flowerData';
 import Image from 'next/image';
-import img from '@/app/assets/img.png';
+import img from 'vet/online-store/app/assets/img.png';
 
 function ColumnCard() {
   return (

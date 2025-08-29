@@ -1,0 +1,61 @@
+.contact-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+
+  form {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    h2 {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #635d5d;
+    }
+
+    .logo_icon {
+      display: block;
+      margin: 0 auto 20px auto;
+    }
+
+    input,
+    textarea {
+      background: #fff;
+      border: 1px solid #064e3b;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 14px;
+      outline: none;
+      color: #635d5d;
+
+      &:focus {
+        border-color: #047857;
+      }
+    }
+
+    textarea {
+      min-height: 80px;
+      resize: vertical;
+      background: #fff;
+    }
+
+    .checkbox {
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      gap: 8px;
+      background: #fff;
+      color: #635d5d;
+
+
+      input {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}

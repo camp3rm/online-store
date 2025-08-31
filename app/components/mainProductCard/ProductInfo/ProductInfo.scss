@@ -1,0 +1,53 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
+@import '../../../styles/function.scss';
+@import '../../../styles/colors.scss';
+
+.product_info {
+   width: 320px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   &-container  { 
+      width: 288px; 
+ 
+      h3 , p {
+        @include body-md();
+        margin-bottom: 16px;
+        }
+     
+}
+}
+.add_to {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    &-cart {
+        width: 214px;
+        height: 44px;
+        border-radius: 15px;
+        background-color: #1D6517;
+        color : color(white, light-hover);
+        border: none;
+            
+               &:hover {
+                background: color(green, normal-hover);
+               }
+           }
+}
+
+.product_description {
+    border-bottom:2px solid color(green, light-active) ;
+    p {
+        @include body-xs();
+        margin-bottom: 8px;
+            }
+}
+.product_quantity {
+    margin-top: 16px;
+    p {
+        @include body-xs();
+        margin-bottom: 8px;
+            }
+}

@@ -1,0 +1,29 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
+@import '../../../styles/function.scss';
+@import '../../../styles/colors.scss';
+
+.pagination_wrapper {
+    width: 292px;
+    margin-top: 18px;
+   @include body-xs();
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.pagination {
+    display: flex;
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 29px;
+        height: 17px;
+        @include body-xs();
+        color: color( white, normal-active);
+
+    }
+}
+.pagination div:first-of-type {
+    color: black
+}

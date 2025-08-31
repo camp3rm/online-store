@@ -1,193 +1,189 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
+// 🔹 Скидання автозаповнення input
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  box-shadow: 0 0 0px 1000px transparent inset !important; 
+  box-shadow: 0 0 0px 1000px transparent inset !important;
   -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
-  -webkit-text-fill-color:#515151 !important;
+  -webkit-text-fill-color: #515151 !important;
   transition: background-color 5000s ease-in-out 0s;
 }
 
+// 🔹 Обгортка сторінки
 .wrapper_login-form {
-width: 100vw;
-height: 100vh;
-display: flex;
-justify-content: center;
-align-items: center;
-background-image: url('/images/forms_image.png');
-background-size: cover;
-background-position: center;
-
-}
-
-
-.wrapper_login-container {
-  width: 532px;
-  min-height: 507px;
-  background: white;
+  width: 100%;
+	height: 100dvh;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-}
-.wrapper_login_title {
+  background-image: url('/images/forms_image.png');
+  background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 50px;
+
+  .wrapper_login-container {
+    width: 532px;
+    min-height: 507px;
+    background: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    
-    margin: 48px 0 0 0;
-}
-.login_title {
- 
-    height: 49px;
-    width: 376px;
-    font-weight: 600;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 36px;
-    text-align: center;
-    vertical-align: middle;
-    color: #0A2308;
-    margin: 18px 0;
-   
-        
-}
-.login_icon {
+
+    // Заголовок
+    .wrapper_login_title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin: 48px 0 0 0;
+
+      .login_title {
+        height: 49px;
+        width: 376px;
+        font-weight: 600;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 36px;
+        text-align: center;
+        vertical-align: middle;
+        color: #0A2308;
+        margin: 18px 0;
+      }
+
+      .login_icon {
         width: 44px;
         height: 44px;
-         
-}
-
-.login_form {
-width: 376px;
-margin: 0 auto;
-display: flex;
-flex-direction: column;
-
-   
-}
-
-.input_box {
-        position: relative;
+      }
     }
 
-  .input_box:first-of-type {
-  margin-bottom: 32px;
-}
+    // Форма логіна
+    .login_form {
+      width: 376px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
 
-.input_icon {
-position: absolute;
-top: 50%;
-left: 18px;
-transform: translateY(-50%);
-pointer-events: none;
-}
+      .input_box {
+        position: relative;
 
-.input_field {
-font-size: 16px;
-font-weight: 200;
-width: 100%;
-font-family: 'Nunito Sans', sans-serif;
-background-color: transparent; 
-height: 52px;
-border-radius: 15px;
-padding: 18px 19px 18px 52px;
-border: 1px solid #0A2308;
-color: #515151;
-}
-.input_field::placeholder {
-color: #515151; 
-}
-.input_field:focus {
-   outline: none;
-   box-shadow: none;
-   }
-   .input_field:focus::placeholder {
-    opacity: 0;
-   }
+        &:first-of-type {
+          margin-bottom: 32px;
+        }
 
+        .input_icon {
+          position: absolute;
+          top: 50%;
+          left: 18px;
+          transform: translateY(-50%);
+          pointer-events: none;
+        }
 
+        .input_field {
+          font-size: 16px;
+          font-weight: 200;
+          width: 100%;
+          font-family: 'Nunito Sans', sans-serif;
+          background-color: transparent;
+          height: 52px;
+          border-radius: 15px;
+          padding: 18px 19px 18px 52px;
+          border: 1px solid #0A2308;
+          color: #515151;
 
-.wrapper_login_forgot {
-    text-align: right;
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 100%;
-    color: #0A2308;
-    margin: 16px 0 32px 0;
-    
+          &::placeholder {
+            color: #515151;
+          }
 
-}
-.wrapper_login_forgot a {
-    
-    border-bottom: 0.5px solid #0A2308;
-}
+          &:focus {
+            outline: none;
+            box-shadow: none;
 
-.wrapper_register-link {
-    margin-top: 20px;
-     display: flex;
-    justify-content: center;
-    gap: 5px;
-    color: #0A2308;
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    
-}
-.wrapper_register-link a {
-    color: #175112;
-}
-.login_button {
- border-radius: 16px;
- height: 44px;
- font-family: 'Nunito Sans', sans-serif;
- font-weight: 400;
- font-size: 16px;
- color: white;
- background-color: #0A2308;
-}
-.login_button:hover {
-  background-color: #0D2D0A;
-}
+            &::placeholder {
+              opacity: 0;
+            }
+          }
+        }
 
+        .input_icon_eye_close,
+        .input_icon_eye_open {
+          position: absolute;
+          top: 50%;
+          right: 16px;
+          transform: translateY(-50%);
+          width: 16px;
+          height: 16px;
+          object-fit: contain;
+        }
+      }
+    }
 
-.input_icon_eye_close {
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  transform: translateY(-50%);
-   width: 16px;
-  height: 16px;
-  object-fit: contain;
+    // Повідомлення про помилку
+    .wrapper_error-message {
+      display: flex;
+      width: 376px;
+      padding: 14px 22px;
+      font-family: 'Nunito Sans', sans-serif;
+      color: #6E6E69;
+      margin-bottom: 32px;
+
+      .error_message {
+        margin-left: 19px;
+        font-weight: 500;
+        width: 286px;
+      }
+    }
+
+    // Стани
+    .error_active {
+      height: 612px;
+    }
+
+    // Забув пароль
+    .wrapper_login_forgot {
+      text-align: right;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 100%;
+      color: #0A2308;
+      margin: 16px 0 32px 0;
+
+      a {
+        border-bottom: 0.5px solid #0A2308;
+      }
+    }
+
+    // Лінк на реєстрацію
+    .wrapper_register-link {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      color: #0A2308;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+
+      a {
+        color: #175112;
+      }
+    }
+
+    // Кнопка логіну
+    .login_button {
+      border-radius: 16px;
+      height: 44px;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      color: white;
+      background-color: #0A2308;
+
+      &:hover {
+        background-color: #0D2D0A;
+      }
+    }
   }
-.input_icon_eye_open {
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  transform: translateY(-50%);
-   width: 16px;
-  height: 16px;
-  object-fit: contain;
-}
-
-  .wrapper_error-message {
-display: flex;
-width: 376px;
-padding: 14px 22px;
-font-family: 'Nunito Sans', sans-serif;
-color: #6E6E69;
-margin-bottom: 32px;
-
-  }
-.error_message {
-    margin-left: 19px;
-    font-weight: 500;
-    width: 286px;
-    
-   
-}
-.error_active {
-    height: 612px;
 }

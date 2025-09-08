@@ -3,8 +3,10 @@ import Image from 'next/image';
 import './about.scss';
 import Button from '@ui/Button';
 import MoreInfo from '@public/icons/more-info.svg'
+import Catalog from "@components/main/catalog-section/CatalogSection"
 
-export default function aboutUs() {
+
+export default function AboutUs() {
 	return (
 		<div className="about_container">
 			<div className="to_catalog">
@@ -26,8 +28,8 @@ export default function aboutUs() {
 				<div className="our_advantages">
 					<ul className="our_advantages-list">
 						<li className="our_advantages-list-item">
-							<span>01</span>
-							<span>Досвід та довіра</span>
+							<span className="our_advantages-item-number">01</span>
+							<span className='our_advantages-item-title'>Досвід та довіра</span>
 							<div className="more_info-box">
 								<Image
 									alt="arrow"
@@ -37,8 +39,8 @@ export default function aboutUs() {
 							</div>
 						</li>
 						<li className="our_advantages-list-item">
-							<span>02</span>
-							<span> Асортимент з любов’ю</span>
+							<span className="our_advantages-item-number">02</span>
+							<span className='our_advantages-item-title'> Асортимент з любов’ю</span>
 							<div className="more_info-box">
 								<Image
 									alt="arrow"
@@ -48,8 +50,8 @@ export default function aboutUs() {
 							</div>
 						</li>
 						<li className="our_advantages-list-item">
-							<span>03</span>
-							<span>Даруємо зелене щастя</span>
+							<span className="our_advantages-item-number">03</span>
+							<span className='our_advantages-item-title'>Даруємо зелене щастя</span>
 							<div className="more_info-box">
 								<Image
 									alt="arrow"
@@ -59,8 +61,8 @@ export default function aboutUs() {
 							</div>
 						</li>
 						<li className="our_advantages-list-item">
-							<span>04</span>
-							<span>Доставка по всій Україні</span>
+							<span className="our_advantages-item-number">04</span>
+							<span className='our_advantages-item-title'>Доставка по всій Україні</span>
 							<div className="more_info-box">
 								<Image
 									alt="arrow"
@@ -70,8 +72,8 @@ export default function aboutUs() {
 							</div>
 						</li>
 						<li className="our_advantages-list-item">
-							<span>05</span>
-							<span>Чому з нами приємно садити</span>
+							<span className="our_advantages-item-number">05</span>
+							<span className='our_advantages-item-title'>Чому з нами приємно садити</span>
 							<div className="more_info-box">
 								<Image
 									alt="arrow"
@@ -82,6 +84,9 @@ export default function aboutUs() {
 						</li>
 					</ul>
 				</div>
+			</div>
+			<div className="cat">
+				<Catalog />
 			</div>
 		</div>
 	);

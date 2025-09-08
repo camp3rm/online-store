@@ -1,7 +1,5 @@
 import React from 'react';
-
 import './main.scss';
-
 import HeroSection from '@components/main/hero-section/HeroSection';
 import CatalogSection from '@components/main/catalog-section/CatalogSection';
 import BenefitsSection from '@components/main/benefits-section/BenefitsSection';

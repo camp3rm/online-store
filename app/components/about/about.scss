@@ -24,7 +24,6 @@
 		& .about_title {
 			color: color(white, light);
 			@include heading-sm();
-			text-align: center;
 			word-wrap: break-word;
 			margin-top: 32px;
 			line-height: 1.5;
@@ -35,8 +34,6 @@
 			height: 52px;
 			align-self: end;
 			margin: 0 15px 15px;
-			background-color: color(white, light-active);
-			color: color(green, darker);
 			border-radius: 15px;
 			border: none;
 			outline: none;
@@ -47,12 +44,39 @@
 		margin: 56px 16px 0;
 		& .about_description {
 			& .about_description-title,
-& .about_description-text {
-	text-align: center;
-}
+			& .about_description-text {
+				text-align: center;
+			}
+			& .about_description-title {
+				margin-bottom: 12px;
+			}
 		}
 
 		& .our_advantages {
+			margin-top: 30px;
+			& .our_advantages-list {
+				list-style: none;
+				display: grid;
+				grid-template-rows: repeat(5, 65px);
+				& .our_advantages-list-item {
+					display: grid;
+					grid-template-columns: auto 1fr auto;
+
+					& .our_advantages-item-number {
+						font-size: 48px;
+					}
+					& .our_advantages-item-title {
+						text-align: start;
+						align-self: center;
+						margin-left: 8px;
+						word-wrap: break-word;
+					}
+
+					& .more_info-box {
+						place-self: center;
+					}
+				}
+			}
 		}
 	}
 }

@@ -1,13 +1,9 @@
 
-import type { Metadata } from "next";
-import { Nunito } from 'next/font/google';
+import type { Metadata } from 'next';
 import Header from '@components/header/Header';
 import Footer from '@/app/components/footer/Footer';
 import './globals.css';
 
-const nunito = Nunito({
-	subsets: ['latin'],
-});
 export default function RootLayout({
 	children,
 }: Readonly<{
@@ -15,7 +11,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={nunito.className}>
+			<body>
 				<Header />
 				{children}
 				<Footer />

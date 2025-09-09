@@ -30,6 +30,8 @@
 		}
 
 		& .to_catalog-button {
+			color: color(green, darker);
+			@include body-sm();
 			min-width: 290px;
 			height: 52px;
 			align-self: end;
@@ -49,6 +51,12 @@
 			}
 			& .about_description-title {
 				margin-bottom: 12px;
+				color: color(green, darker);
+				@include body-lg();
+			}
+			& .about_description-text {
+				color: color(green, darker);
+				@include body-sm();
 			}
 		}
 
@@ -58,14 +66,19 @@
 				list-style: none;
 				display: grid;
 				grid-template-rows: repeat(5, 65px);
+				
 				& .our_advantages-list-item {
 					display: grid;
 					grid-template-columns: auto 1fr auto;
 
 					& .our_advantages-item-number {
-						font-size: 48px;
+						@include heading-lg();
+						color: color(green, darker);
+						font-weight: 200;
 					}
 					& .our_advantages-item-title {
+						color: color(green, darker);
+						@include body-md();
 						text-align: start;
 						align-self: center;
 						margin-left: 8px;
@@ -79,4 +92,24 @@
 			}
 		}
 	}
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.999px) {
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.999px) {
+	
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200.999px) {
+	
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1440.999px) {
+	
+}
+
+@media screen and (min-width: 1441px) {
+	
 }

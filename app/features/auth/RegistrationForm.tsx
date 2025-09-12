@@ -4,7 +4,7 @@ import { AxiosError } from 'axios';
 import { RegistrationFormData } from '@features/auth/auth.schema';
 import { registerUser } from '@api/registerUser';
 import RegistrationFields from './RegistrationFields';
-import { useRegistrationForm } from '@hooks/useRegistartionForm';
+import { useRegistrationForm } from '@/app/hooks/registerForm/useRegistartionForm';
 
 type Props = {
 	showPassword: boolean;

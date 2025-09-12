@@ -14,6 +14,13 @@ export interface TokenResponse {
   status: 'success' | 'error';
   token: string;
   data: {
-    user: Omit<IUser, 'password'>; // исключаем password из ответа
+    user: Omit<IUser, 'password'>;
   };
+}
+
+export interface ErrorTokenResponse {
+  status: 'error';
+  message: string;
+  token?: never;
+  data?: never;
 }

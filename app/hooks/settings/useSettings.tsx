@@ -4,7 +4,7 @@ import NextArrow from '@ui/NextArrow';
 import PrevArrow from '@ui/PrevArrow';
 import { Settings } from 'react-slick';
 
-export const useSliderSettings = () => {
+export const useSettings = () => {
 
 	const [isMobile, setIsMobile] = useState<boolean>(false);
 	useEffect(() => {

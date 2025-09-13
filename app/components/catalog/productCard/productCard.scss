@@ -1,0 +1,44 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
+@import '../../../styles/function.scss';
+@import '../../../styles/colors.scss';
+
+  
+
+
+.product_card-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 144px;
+    height: 53px;
+    background-color: #F7F7F7;
+    h3, p {
+       @include body-xs();
+    }
+}
+
+    .product_card {
+         width: 144px;
+         height: 225px;
+       
+    }
+.product_card-image {
+  display: block;
+ }
+ .product_card-wrapper {
+    position: relative;
+ }
+ .heart_image {
+  position: absolute;
+   top: 0;           
+   right: 0;    
+   width: 44px;
+   height: 44px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+
+ }

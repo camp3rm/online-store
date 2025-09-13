@@ -1,0 +1,80 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
+@import '../../../styles/function.scss';
+@import '../../../styles/colors.scss';
+
+
+.information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  width: 100%;
+ margin: 56px 0 56px 0;
+   &_header {
+    h2 {
+      @include body-lg();
+    }
+   }
+
+
+  &_title {
+    @include body-md();
+      }
+
+  &_arrow {
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      transition: transform 0.3s ease;
+    }
+
+    &.active img {
+      transform: rotate(180deg); 
+    }
+  }
+
+  &_content {
+    width: 288px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    animation: fadeIn 0.3s ease;
+    h3 {
+        @include body-sm();
+        margin-bottom: 12px;
+
+    }
+
+    p {
+        @include body-xs();
+        margin-bottom: 16px;
+    }
+  }
+}
+.information_title-box {
+   width: 288px;
+   height: 44px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   
+   
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

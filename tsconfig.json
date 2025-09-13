@@ -30,7 +30,8 @@
 			"@styles/*": ["app/styles/*"],
 			"@api/*": ["app/api/*"],
 			"@assets/*": ["app/assets/*"],
-			"@public/*": ["public/*"]
+			"@public/*": ["public/*"],
+			"@data/*": ["app/data/*"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

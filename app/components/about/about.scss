@@ -4,6 +4,7 @@
 @import '../../styles/function.scss';
 
 .about_container {
+	margin: 0 auto;
 	max-width: 1440px;
 	min-width: 288px;
 	display: grid;
@@ -27,6 +28,7 @@
 			word-wrap: break-word;
 			margin-top: 32px;
 			line-height: 1.5;
+			text-align: center;
 		}
 
 		& .to_catalog-button {

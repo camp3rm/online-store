@@ -5,10 +5,6 @@ import Button from '@ui/Button';
 import Catalog from '@components/main/catalog-section/CatalogSection';
 import AdditionalInfo from '@ui/advantagesList/AdvantagesListItem';
 export default function AboutUs() {
-	// окремі компоненти списки
-	// Для кожного своя кнопка
-	// Винести interface
-
 	return (
 		<div className="about_container">
 			<div className="to_catalog">
